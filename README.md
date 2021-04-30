@@ -7,6 +7,7 @@ A  beuatiful AI assistant to help students with their uni life that is centraliz
 `git clone https://github.com/karimkohel/potato.git`
 
  - check the projects section of the repo on github to see where we are on development
+ - check your conda env is working and install libraries in said env with `pip install -r requirements.txt`
  - after editing a file you should always commit when you finish a specific edit
 
 `git add .`
