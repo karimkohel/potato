@@ -7,7 +7,7 @@ try:
     with open("settings.json") as f:
         settings = json.load(f)
 except Exception:
-    settings = {'speech_speed': 170, 'voice_number': 1, 'music_folder': ''}
+    settings = {'speech_speed': 170, 'voice_number': 0, 'music_folder': ''}
     with open('settings.json', 'w') as f:
             json.dump(settings, f)
 
