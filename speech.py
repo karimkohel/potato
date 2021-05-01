@@ -1,6 +1,7 @@
 import speech_recognition as sr
 import pyttsx3 as tts
 import json
+import os
 
 try:
     with open("settings.json") as f:
@@ -10,6 +11,8 @@ except Exception:
     with open('settings.json', 'w') as f:
             json.dump(settings, f)
 
+if os.name == "posix" :
+    settings["voice_number"] = 16
 
 speaker = tts.init()
 voices = speaker.getProperty('voices')
