@@ -12,5 +12,9 @@ bot.train_model()
 while True:
 
     # msg = botsocks.getMessage(serverSocket)
-    msg = "hey there"
-    print(msg)
+    msg = input("enter msg: ")
+
+    if msg == "exit":
+        break
+    else:
+        bot.request(msg)
