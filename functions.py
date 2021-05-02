@@ -25,3 +25,7 @@ where intent is the bot response to a given command
 and the data is the task you got in the function
 
 """
+
+mappings = {
+
+}
