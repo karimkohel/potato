@@ -110,7 +110,7 @@ class GenericAssistant(IAssistant):
         sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
         self.model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
-        self.hist = self.model.fit(np.array(train_x), np.array(train_y), epochs=150, batch_size=5, verbose=1)
+        self.hist = self.model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1)
 
     def save_model(self, model_name=None):
         if model_name is None:
@@ -183,11 +183,6 @@ class GenericAssistant(IAssistant):
         ints = self._predict_class(message)
 
         if ints[0]['intent'] in self.intent_methods.keys():
-            takeBreak = self.intent_methods[ints[0]['intent']](self._get_response(ints, self.intents))
-            if takeBreak:
-                return False
-            else:
-                return True
+            self.intent_methods[ints[0]['intent']](self._get_response(ints, self.intents))
         else:
-            speech.speak(self._get_response(ints, self.intents))
-            return True
+            print(self._get_response(ints, self.intents))
