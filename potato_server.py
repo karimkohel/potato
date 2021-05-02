@@ -11,7 +11,27 @@ while True:
 
     clientSocket, address = serverSocket.accept()
     print(f"connection from : {address}")
-    data = clientSocket.recv(30)
-    msg = data.decode("utf-8")
-    print(msg)
+    fullMsg = ''
+    newMsg = True
+
+    while True:
+
+        msg = clientSocket.recv(HEADERSIZE+5)
+
+        # if msg start then get it's len from the header
+        if newMsg:
+            decodedMsg = msg[:HEADERSIZE].decode("utf-8")
+            msgLen = int(decodedMsg)
+            newMsg = False
+
+        fullMsg += msg.decode("utf-8")
+
+        if len(fullMsg)-HEADERSIZE == msgLen:
+            print(fullMsg[HEADERSIZE:])
+            newMsg = True
+            break
+        
+
+
     clientSocket.close()
+    print(fullMsg)
