@@ -1,22 +1,25 @@
 import speech
-import random.randint
+import random
 
-def random_range(index1,index2):
-    number=random.randint(int(index1),int(index2))
+def random_range(intent):
+    number = random.randint(0, 100)
     return number
 
-def flip_coin():
-    coin=random.choice([True,False])
+def flip_coin(intent):
+    coin = random.choice([True, False])
     if coin:
         return "head"
     else:
-        return "tail"    
+        return "tail"
+
+def goodBye(intent):
+    exit(0)
 
 """
 Basic setup of a function
 
 def function(intent):
-    speech.speak(intent + data)
+    send(intent + data)
 
 where intent is the bot response to a given command
 and the data is the task you got in the function
