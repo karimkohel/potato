@@ -34,4 +34,3 @@ while True:
 
 
     clientSocket.close()
-    print(fullMsg)
