@@ -1,4 +1,10 @@
 import speech
+import random.randint
+
+def random_range(index1,index2):
+    number=random.randint(int(index1),int(index2))
+    return number
+
 
 """
 Basic setup of a function
