@@ -5,6 +5,12 @@ def random_range(index1,index2):
     number=random.randint(int(index1),int(index2))
     return number
 
+def flip_coin():
+    coin=random.choice([True,False])
+    if coin:
+        return "head"
+    else:
+        return "tail"    
 
 """
 Basic setup of a function
