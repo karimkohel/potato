@@ -31,9 +31,13 @@ class ServerSock():
                 newMsg = True
                 break
             
-        clientSocket.close()
         return fullMsg[self.HEADERSIZE:], clientSocket
 
     def sendMessage(self, clientSocket, msg):
-        pass
+
+        data = f'{len(msg):<{self.HEADERSIZE}}'+ msg
+        codedMsg = bytes(data, "utf-8")
+        clientSocket.send(codedMsg)
+        if lastMsg:
+            # clientSocket.close()
 
