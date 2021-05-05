@@ -17,20 +17,20 @@ class ServerSock():
 
         while True:
 
-            msg = clientSocket.recv(HEADERSIZE+5)
+            msg = clientSocket.recv(self.HEADERSIZE+5)
 
             # if msg start then get it's len from the header
             if newMsg:
-                decodedMsg = msg[:HEADERSIZE].decode("utf-8")
+                decodedMsg = msg[:self.HEADERSIZE].decode("utf-8")
                 msgLen = int(decodedMsg)
                 newMsg = False
 
             fullMsg += msg.decode("utf-8")
 
-            if len(fullMsg)-HEADERSIZE == msgLen:
+            if len(fullMsg)-self.HEADERSIZE == msgLen:
                 newMsg = True
                 break
             
         clientSocket.close()
-        return fullMsg[HEADERSIZE:]
+        return fullMsg[self.HEADERSIZE:]
 
