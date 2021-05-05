@@ -7,6 +7,7 @@ class ServerSock():
         self.serverSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.serverSocket.bind((IP, PORT))
         self.serverSocket.listen(10)
+        print("Listening on " + str(IP) + ":" + str(PORT))
         
 
     def getMessage(self):
@@ -38,6 +39,4 @@ class ServerSock():
         data = f'{len(msg):<{self.HEADERSIZE}}'+ msg
         codedMsg = bytes(data, "utf-8")
         clientSocket.send(codedMsg)
-        if lastMsg:
-            # clientSocket.close()
 
