@@ -52,6 +52,12 @@
             "tag": "jokes",
             "patterns": ["tell me a joke", "are you funny", "can you tell jokes", "i love jokes", "can you tell a funny joke", "funny joke", "do you have jokes"],
             "responses": ["No, I'm not funny", "Knock knock", "You're not even funny", "I hate your sense of humor", "Go ask siri", "Ok, but no", "Don't you have friends for that?", "I'm not even a real person go joke around with other people", "Really? are you that lonely"]
+        },
+
+        {
+            "tag": "random",
+            "patterns": ["get me a random number", "get a random value", "give me a number", "generate a number", "pick a number"],
+            "responses": ["a random number between 0 and 100 is", "its", "that would be", "true randomness is not real but take", "what do you think about"]
         }
     ]
 }
