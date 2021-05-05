@@ -184,8 +184,6 @@ class GenericAssistant(IAssistant):
 
         if ints[0]['intent'] in self.intent_methods.keys():
             self.intent_methods[ints[0]['intent']](self._get_response(ints, self.intents), serverObj, clientSock)
-            print("got into function")
         else:
             serverObj.sendMessage(clientSock, self._get_response(ints, self.intents))
             # clientSock.close()
-            print("sent response")

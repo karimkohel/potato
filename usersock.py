@@ -16,7 +16,6 @@ class ClientSock():
         data = f'{len(msg):<{self.HEADERSIZE}}'+ msg
         codedMsg = bytes(data, "utf-8")
         self.clientSocket.send(codedMsg)
-        print("sent msg : " + msg)
         
     def recvMsg(self):
 

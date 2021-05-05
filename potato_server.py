@@ -14,7 +14,6 @@ clientSocket = serverObj.accept()
 while True:
 
     msg = serverObj.getMessage(clientSocket)
-    print("go msg : " + str(msg))
 
     if msg == "exit":
         break
