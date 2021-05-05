@@ -1,14 +1,14 @@
 import speech
 import random
+import google
 
-def randomRange(intent, server, client):
+def randomRange(response, server, client):
     server.sendMessage(client, "till what number should i guess")
     range1 = server.getMessage(client)
     number = random.randint(0, int(range1))
-    server.sendMessage(client, intent + " " + str(number))
+    server.sendMessage(client, response + " " + str(number))
     # client.close()
 
-    
 
 # def flipCoin(intent):
 #     coin = random.choice([True, False])
@@ -19,7 +19,6 @@ def randomRange(intent, server, client):
 
 # def goodBye(intent):
 #     exit(0)
-
 
 
 mappings = {
