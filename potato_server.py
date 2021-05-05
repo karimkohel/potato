@@ -10,10 +10,11 @@ bot.train_model()
 bot.save_model()
 # bot.load_model()
 
+clientSocket = serverObj.accept()
 while True:
 
-    msg, clientSocket = serverObj.getMessage()
-    print("go msg : " + msg)
+    msg = serverObj.getMessage(clientSocket)
+    print("go msg : " + str(msg))
 
     if msg == "exit":
         break
