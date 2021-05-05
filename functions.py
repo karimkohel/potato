@@ -2,11 +2,11 @@ import speech
 import random
 
 def randomRange(intent, server, client):
-    range1 = server.sendMessage(client, "what is range")
-    number = random.randint(int(range1))
-    print(intent + " " + str(number))
+    server.sendMessage(client, "till what number should i guess")
+    range1 = server.getMessage(client)
+    number = random.randint(0, int(range1))
     server.sendMessage(client, intent + " " + str(number))
-    client.close()
+    # client.close()
 
     
 
