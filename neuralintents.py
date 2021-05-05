@@ -179,10 +179,12 @@ class GenericAssistant(IAssistant):
     def request_method(self, message):
         pass
 
-    def request(self, message):
+    def request(self, message, serverObj, clientSock):
         ints = self._predict_class(message)
 
         if ints[0]['intent'] in self.intent_methods.keys():
-            self.intent_methods[ints[0]['intent']](self._get_response(ints, self.intents))
+            self.intent_methods[ints[0]['intent']](self._get_response(ints, self.intents), serverObj, clientSock)
         else:
+            serverObj.sendMessage(clientSock, self._get_response(ints, self.intents))
+            clientSock.close()
             print(self._get_response(ints, self.intents))
