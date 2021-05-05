@@ -3,16 +3,17 @@ from botsocks import ServerSock
 import neuralintents
 from functions import mappings
 
-serverObj =  ServerSock(socket.gethostbyname(socket.gethostname), 5000)
+serverObj =  ServerSock(socket.gethostbyname(socket.gethostname()), 5000)
 
 bot = neuralintents.GenericAssistant("intents.json", mappings, "model")
 bot.train_model()
-# bot.save_model()
+bot.save_model()
 # bot.load_model()
 
 while True:
 
     msg, clientSocket = serverObj.getMessage()
+    print("go msg : " + msg)
 
     if msg == "exit":
         break
