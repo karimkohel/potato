@@ -4,25 +4,28 @@ class ClientSock():
 
     HEADERSIZE = 20
 
-    def __init__(self, IP, PORT):
+    def __init__(self, ip, port):
+        self.PORT = port
+        self.IP = ip
         self.clientSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.clientSocket.connect((IP,PORT))
 
+    def connect(self):
+        self.clientSocket.connect((self.IP, self.PORT))
 
     def sendMsg(self, msg):
-        data = f'{len(msg):<{HEADERSIZE}}'+ msg
+        data = f'{len(msg):<{self.HEADERSIZE}}'+ msg
         codedMsg = bytes(data, "utf-8")
         self.clientSocket.send(codedMsg)
+        print()
         
     def recvMsg(self):
-        serverSocket, address = self.clientSocket.accept() # blocking code
-        print(f"connection from : {address}")
+
         fullMsg = ''
         newMsg = True
 
         while True:
 
-            msg = serverSocket.recv(self.HEADERSIZE+5)
+            msg = self.clientSocket.recv(self.HEADERSIZE+5)
 
             # if msg start then get it's len from the header
             if newMsg:
