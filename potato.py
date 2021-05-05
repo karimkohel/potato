@@ -10,3 +10,5 @@ while True:
     client.sendMsg(msg) # this will send msg to server 
 
     # next we will accept responses here
+    response = client.recvMsg()
+    # test

@@ -14,3 +14,26 @@ class ClientSock():
         codedMsg = bytes(data, "utf-8")
         self.clientSocket.send(codedMsg)
         
+    def recvMsg(self):
+        serverSocket, address = self.clientSocket.accept() # blocking code
+        print(f"connection from : {address}")
+        fullMsg = ''
+        newMsg = True
+
+        while True:
+
+            msg = serverSocket.recv(self.HEADERSIZE+5)
+
+            # if msg start then get it's len from the header
+            if newMsg:
+                decodedMsg = msg[:self.HEADERSIZE].decode("utf-8")
+                msgLen = int(decodedMsg)
+                newMsg = False
+
+            fullMsg += msg.decode("utf-8")
+
+            if len(fullMsg)-self.HEADERSIZE == msgLen:
+                newMsg = True
+                break
+            
+        return fullMsg[self.HEADERSIZE:]
