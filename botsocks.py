@@ -9,10 +9,12 @@ class ServerSock():
         self.serverSocket.listen(10)
         print("Listening on " + str(IP) + ":" + str(PORT))
         
-
-    def getMessage(self):
+    def accept(self):
         clientSocket, address = self.serverSocket.accept() # blocking code
         print(f"connection from : {address}")
+        return clientSocket
+
+    def getMessage(self, clientSocket):
         fullMsg = ''
         newMsg = True
 
@@ -32,7 +34,7 @@ class ServerSock():
                 newMsg = True
                 break
             
-        return fullMsg[self.HEADERSIZE:], clientSocket
+        return fullMsg[self.HEADERSIZE:]
 
     def sendMessage(self, clientSocket, msg):
 
