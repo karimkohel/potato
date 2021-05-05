@@ -1,15 +1,12 @@
 import socket
+from usersock import ClientSock
 
-HEADERSIZE = 20
-clientSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+client = ClientSock(socket.gethostname(socket.gethostname()),5000)
 
-clientSocket.connect((socket.gethostname(), 5000))
+while True:
 
-msg = "Hello there nourhan osama"
+    msg = input("Enter msg to potato: ")# # 
 
-data = f'{len(msg):<{HEADERSIZE}}'+ msg
+    client.sendMsg(msg) # this will send msg to server 
 
-codedMsg = bytes(data, "utf-8")
-
-
-clientSocket.send(codedMsg)
+    # next we will accept responses here
