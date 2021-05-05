@@ -32,5 +32,8 @@ class ServerSock():
                 break
             
         clientSocket.close()
-        return fullMsg[self.HEADERSIZE:]
+        return fullMsg[self.HEADERSIZE:], clientSocket
+
+    def sendMessage(self, clientSocket, msg):
+        pass
 
