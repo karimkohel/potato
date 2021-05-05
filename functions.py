@@ -1,9 +1,13 @@
 import speech
 import random
 
-def randomRange(intent):
-    number = random.randint(0, 100)
+def randomRange(intent, server, client):
+    range1 = server.sendMessage(client, "what is range")
+    number = random.randint(int(range1))
     print(intent + " " + str(number))
+    server.sendMessage(client, intent + " " + str(number))
+    client.close()
+
     
 
 # def flipCoin(intent):
