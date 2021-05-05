@@ -183,7 +183,9 @@ class GenericAssistant(IAssistant):
         ints = self._predict_class(message)
 
         if ints[0]['intent'] in self.intent_methods.keys():
+            # if a tag has a function map it will go in here
             self.intent_methods[ints[0]['intent']](self._get_response(ints, self.intents), serverObj, clientSock)
         else:
+            # if no functino map just send response
             serverObj.sendMessage(clientSock, self._get_response(ints, self.intents))
             # clientSock.close()
