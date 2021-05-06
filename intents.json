@@ -65,11 +65,19 @@
             "patterns": ["head or tail", "flip a coin","tail side or head side","toss a coin"],
             "responses": ["tails","heads","its tail","its head","try your luck! heads?", "try your luck! tails?"]
         },
+
         {
             "tag": "googlesearch",
             "patterns": ["tell me something about", "open search on","what is","Want information on","open a search tab"],
-            "responses": ["On it","wait a sec.","Your search is ready","Done!","Here you go"]
+            "responses": ["On it","wait a sec.","Your search is ready","Done!","Here you go","Alright!"]
+        },
+
+        {
+            "tag": "Youtube",
+            "patterns": ["get me a video on youtube", "open a video","I want something to watch","entertain me with"],
+            "responses": ["On it","wait a sec.","Here is your video","Done!","Here you go","Prepared this for you hone","Alright!"]
         }
+
 
     ]
 }
