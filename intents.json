@@ -64,6 +64,12 @@
             "tag": "headsortails",
             "patterns": ["head or tail", "flip a coin","tail side or head side","toss a coin"],
             "responses": ["tails","heads","its tail","its head","try your luck! heads?", "try your luck! tails?"]
+        },
+        {
+            "tag": "googlesearch",
+            "patterns": ["tell me something about", "open search on","what is","Want information on","open a search tab"],
+            "responses": ["On it","wait a sec.","Your search is ready","Done!","Here you go"]
         }
+
     ]
 }
