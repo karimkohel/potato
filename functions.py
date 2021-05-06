@@ -16,6 +16,12 @@ def googleSearch(response,server,client):
     server.sendMessage(client, response)
     webbrowser.open(URl+search)
 
+def youtubeSearch(response,server,client):
+    search=server.getMessage(client)
+    youtube_Url=("https://www.youtube.com/results?search_query=")
+    server.sendMessage(client, response)
+    webbrowser.open(youtube_Url+search)
+
 
 
 # def flipCoin(intent):
