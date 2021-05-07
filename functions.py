@@ -1,6 +1,5 @@
 import speech
 import random
-import google
 import webbrowser
 
 def randomRange(response, server, client):
@@ -21,18 +20,6 @@ def youtubeSearch(response,server,client):
     youtube_Url=("https://www.youtube.com/results?search_query=")
     server.sendMessage(client, response)
     webbrowser.open(youtube_Url+search)
-
-
-
-# def flipCoin(intent):
-#     coin = random.choice([True, False])
-#     if coin:
-#         return "head"
-#     else:
-#         return "tail"
-
-# def goodBye(intent):
-#     exit(0)
 
 
 mappings = {
