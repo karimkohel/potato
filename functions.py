@@ -1,6 +1,5 @@
 import speech
 import random
-import google
 import webbrowser
 from datetime import datetime
 
@@ -33,18 +32,6 @@ def Date(response,server,client):
     getDate=now.strftime("%A ,%B %d, %y)
     server.sendMessage(client, response + " " + getDate)
 
-
-
-
-# def flipCoin(intent):
-#     coin = random.choice([True, False])
-#     if coin:
-#         return "head"
-#     else:
-#         return "tail"
-
-# def goodBye(intent):
-#     exit(0)
 
 
 mappings = {

@@ -63,7 +63,7 @@
         {
             "tag": "headsortails",
             "patterns": ["head or tail", "flip a coin","tail side or head side","toss a coin"],
-            "responses": ["tails","heads","its tail","its head","try your luck! heads?", "try your luck! tails?"]
+            "responses": ["its tails","its heads","try your luck! heads?", "try your luck! tails?", "ok wait i will flip a coin now, ding, oh no it landed exactly on its edge, better luck next time", "it's gonna be heads for this one", "hmm i dont know, maybe tails", "tails", "heads"]
         },
 
         {
