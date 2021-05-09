@@ -29,7 +29,7 @@ def Time(response,server,client):
 
 def Date(response,server,client):
     server.getMessage(client)
-    getDate=now.strftime("%A ,%B %d, %y)
+    getDate=now.strftime("%A ,%B %d, %Y")
     server.sendMessage(client, response + " " + getDate)
 
 
