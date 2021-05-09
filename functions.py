@@ -2,6 +2,7 @@ import speech
 import random
 import google
 import webbrowser
+from datetime import datetime
 
 def randomRange(response, server, client):
     server.sendMessage(client, "till what number should i guess")
@@ -21,6 +22,14 @@ def youtubeSearch(response,server,client):
     youtube_Url=("https://www.youtube.com/results?search_query=")
     server.sendMessage(client, response)
     webbrowser.open(youtube_Url+search)
+
+def Time(response,server,client):
+    server.getMessage(client)
+    getTime=now.strftime("%H %M %p")
+    server.sendMessage(client, response + " " + getTime)
+
+
+
 
 
 
