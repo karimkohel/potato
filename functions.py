@@ -32,7 +32,17 @@ def Date(response,server,client):
     getDate=now.strftime("%A ,%B %d, %Y")
     server.sendMessage(client, response + " " + getDate)
 
-
+def getWeather(response,server,client):
+    api = 'http://api.openweathermap.org/data/2.5/weather?q=Cairo&appid=f1e62ab85ff8b2eca979678d57a6de2e&units=metric' 
+    try:
+        allData = requests.get(api).json()
+        weather = allData['weather'][0]['description']
+        temp = allData['main']['temp']
+        server.sendMessage(client,response + " " + weather + ", with temperatures around " + str(int(temp)) + " degrees")
+    except TimeoutError:
+       server.sendMessage(client, response + " internet connection error occured, try again later")
+    except Exception:
+        server.sendMessage(client, response  + " An error occured, try again later")
 
 mappings = {
     "random" : randomRange,
