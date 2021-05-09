@@ -36,6 +36,7 @@ def getWeather(response,server,client):
     # Need to put Location instead of cairo
     api = 'http://api.openweathermap.org/data/2.5/weather?q=Cairo&appid=f1e62ab85ff8b2eca979678d57a6de2e&units=metric' 
     try:
+        server.getMessage(client)
         allData = requests.get(api).json()
         weather = allData['weather'][0]['description']
         temp = allData['main']['temp']
