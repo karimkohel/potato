@@ -26,10 +26,13 @@ class Ui_Form(object):
         self.chatBox.setObjectName("chatBox")
         self.typingBox = QtWidgets.QTextEdit(Form)
         self.typingBox.setGeometry(QtCore.QRect(20, 545, 381, 31))
+        self.typingBox.setPlaceholderText("type here...")
         self.typingBox.setStyleSheet("background-color: rgb(253, 251, 255);"
         "border-radius: 4px;"
         "border: 1px solid 'gainsboro';"
+        "font: 75 16pt 'Optima';"
         )
+        self.typingBox.setPlaceholderText("type here...")
         self.typingBox.setObjectName("typingBox")
         self.sendButton = QtWidgets.QPushButton(Form)
         self.sendButton.setGeometry(QtCore.QRect(410, 540, 61, 21))
