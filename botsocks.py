@@ -44,7 +44,12 @@ class ServerSock():
         clientSocket.send(codedMsg)
 
     def handelClient(self, clientSocket):
-        msg = self.getMessage(clientSocket)
-        self.bot.request(msg, self, clientSocket)
+        try:
+            msg = self.getMessage(clientSocket)
+            self.bot.request(msg, self, clientSocket)
+        except ConnectionResetError:
+            pass
+        except Exception as e:
+            print(e)
         print("closing connection")
         clientSocket.close()
