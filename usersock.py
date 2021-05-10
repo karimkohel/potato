@@ -7,10 +7,10 @@ class ClientSock():
     def __init__(self, ip, port):
         self.PORT = port
         self.IP = ip
-        self.clientSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.clientSocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        # self.clientSocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
     def connect(self):
+        self.clientSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.clientSocket.connect((self.IP, self.PORT))
 
     def sendMsg(self, msg):
