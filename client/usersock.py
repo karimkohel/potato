@@ -40,15 +40,15 @@ class ClientSock():
                 break
             
         fullMsg = fullMsg[self.HEADERSIZE:]
-        flag = fullMsg[-1]
+        flag = int(fullMsg[-1])
         response = fullMsg[:-1]
         return response, flag
 
-    def flagHandler(self, flag):
+    def flagHandler(self, flag, chatObj=None):
         if flag == 2:
-            self.functions["2"]()
+            self.functions["2"](chatObj)
         elif flag == 3:
-            self.functions["3"]()
+            self.functions["3"](chatObj)
 
 
     def close(self):
