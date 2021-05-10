@@ -10,7 +10,10 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QCursor, QIcon, QPixmap, QFont
+from chatWindow import Ui_Form
 
+
+switch_window = QtCore.pyqtSignal(str)
 
 class Ui_MainWindow():
     def setupUi(self, MainWindow):
@@ -70,6 +73,7 @@ QPushButton::hover{background-color:bisque;
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        self.chatButton.clicked.connect(self.startChat)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate #converts from ui to py
@@ -77,6 +81,13 @@ QPushButton::hover{background-color:bisque;
         self.label.setText(_translate("MainWindow", "How do you want to ask potato?"))
         self.chatButton.setText(_translate("MainWindow", "Chat"))
         self.voiceButton.setText(_translate("MainWindow", "Voice"))
+    def startChat(self):
+            self.window = QtWidgets.QWidget()
+            self.ui = Ui_Form()
+            self.ui.setupUi(self.window)
+            self.window.show()
+
+         
 
 
 
