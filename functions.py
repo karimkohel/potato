@@ -11,25 +11,25 @@ def randomRange(response, server, client):
     # client.close()
 
 def googleSearch(response,server,client):
-    search=server.getMessage(client)
-    URl=("https://www.google.com/search?q=")
+    search = server.getMessage(client)
+    URl = ("https://www.google.com/search?q=")
     server.sendMessage(client, response)
-    webbrowser.open(URl+search)
+    webbrowser.open(URl + search)
 
 def youtubeSearch(response,server,client):
-    search=server.getMessage(client)
-    youtube_Url=("https://www.youtube.com/results?search_query=")
+    search = server.getMessage(client)
+    youtubeUrl = ("https://www.youtube.com/results?search_query=")
     server.sendMessage(client, response)
-    webbrowser.open(youtube_Url+search)
+    webbrowser.open(youtubeUrl + search)
 
 def time(response,server,client):
     server.getMessage(client)
-    getTime=now.strftime("%H %M %p")
+    getTime = now.strftime("%H %M %p")
     server.sendMessage(client, response + " " + getTime)
 
 def date(response,server,client):
     server.getMessage(client)
-    getDate=now.strftime("%A ,%B %d, %Y")
+    getDate = now.strftime("%A ,%B %d, %Y")
     server.sendMessage(client, response + " " + getDate)
 
 def getWeather(response,server,client):
@@ -41,6 +41,7 @@ def getWeather(response,server,client):
         weather = allData['weather'][0]['description']
         temp = allData['main']['temp']
         server.sendMessage(client,response + " " + weather + ", with temperatures around " + str(int(temp)) + " degrees")
+
     except TimeoutError:
        server.sendMessage(client, response + " internet connection error occured, try again later")
     except Exception:
