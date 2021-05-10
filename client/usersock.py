@@ -8,7 +8,6 @@ class ClientSock():
         self.PORT = port
         self.IP = ip
         self.functions = functions
-        # self.clientSocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
     def connect(self):
         self.clientSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -46,8 +45,10 @@ class ClientSock():
         return response, flag
 
     def flagHandler(self, flag):
-        if flag
-
+        if flag == 2:
+            self.functions["2"]()
+        elif flag == 3:
+            self.functions["3"]()
 
 
     def close(self):
