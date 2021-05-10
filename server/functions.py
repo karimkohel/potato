@@ -1,6 +1,7 @@
 import speech
 import random
 import webbrowser
+from datetime import datetime
 import requests
 from datetime import datetime
 
@@ -10,13 +11,13 @@ def randomRange(response, server, client):
     number = random.randint(0, int(range1))
     server.sendMessage(client, response + " " + str(number), 0)
 
-def googleSearch(response, server, client):
+def googleSearch(response,server,client):
     search = server.getMessage(client)
     URl = ("https://www.google.com/search?q=")
     server.sendMessage(client, response)
     webbrowser.open(URl + search)
 
-def youtubeSearch(response, server, client):
+def youtubeSearch(response,server,client):
     search = server.getMessage(client)
     youtubeUrl = ("https://www.youtube.com/results?search_query=")
     server.sendMessage(client, response)
