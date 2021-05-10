@@ -64,12 +64,10 @@ while True:
       client.connect()
 
       while True:
-            try:
                   msg = input("Enter msg to potato: ")
                   client.sendMsg(msg)
-                  response = client.recvMsg()
-            except ConnectionAbortedError:
-                  print("socket closed from server")
-                  client.clientSocket.close()
-                  break
-            print(response)
+                  response, flag = client.recvMsg()
+                  print(response)
+                  if flag == "0":
+                        client.close()
+                        break

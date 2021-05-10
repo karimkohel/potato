@@ -39,4 +39,10 @@ class ClientSock():
                 newMsg = True
                 break
             
-        return fullMsg[self.HEADERSIZE:]
+        fullMsg = fullMsg[self.HEADERSIZE:]
+        flag = fullMsg[-1]
+        response = fullMsg[:-1]
+        return response, flag
+
+    def close(self):
+        self.clientSocket.close()
