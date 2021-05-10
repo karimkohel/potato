@@ -25,7 +25,7 @@ class Ui_Form(object):
 "border-radius: 4px;")
         self.chatBox.setObjectName("chatBox")
         self.typingBox = QtWidgets.QTextEdit(Form)
-        self.typingBox.setGeometry(QtCore.QRect(20, 540, 381, 31))
+        self.typingBox.setGeometry(QtCore.QRect(20, 545, 381, 31))
         self.typingBox.setStyleSheet("background-color: rgb(253, 251, 255);"
         "border-radius: 4px;"
         "border: 1px solid 'gainsboro';"
