@@ -2,6 +2,7 @@ import speech
 import random
 import webbrowser
 from datetime import datetime
+import requests
 
 def randomRange(response, server, client):
     server.sendMessage(client, "till what number should i guess")
@@ -24,12 +25,14 @@ def youtubeSearch(response,server,client):
 
 def time(response,server,client):
     server.getMessage(client)
-    getTime = now.strftime("%H %M %p")
+    nowInfo = datetime.now()
+    getTime = nowInfo.strftime("%H %M %p")
     server.sendMessage(client, response + " " + getTime)
 
 def date(response,server,client):
     server.getMessage(client)
-    getDate = now.strftime("%A ,%B %d, %Y")
+    nowInfo = datetime.now()
+    getDate = nowInfo.strftime("%A ,%B %d, %Y")
     server.sendMessage(client, response + " " + getDate)
 
 def getWeather(response,server,client):
