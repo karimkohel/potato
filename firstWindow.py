@@ -29,23 +29,29 @@ class Ui_MainWindow():
         self.label.setObjectName("label")
         self.chatButton = QtWidgets.QPushButton(self.centralwidget)
         self.chatButton.setGeometry(QtCore.QRect(130, 300, 113, 32))
-        self.chatButton.setStyleSheet("color: rgb(255, 144, 77);\n"
-"background-color:\'white\';\n"
-"font: 75 italic 16pt \"Optima\";\n"
-"border:0px solid \'white\';\n"
-"border-radius: 6px;\n"
-"")
+        self.chatButton.setStyleSheet("""QPushButton{color: rgb(255, 144, 77);
+background-color: 'white';
+font: 75 italic 16pt "Optima";
+border:0px solid;
+border-radius: 6px;}
+QPushButton::hover{background-color:bisque;
+}"""
+)
         
         self.chatButton.setObjectName("chatButton")
         self.voiceButton = QtWidgets.QPushButton(self.centralwidget)
         self.voiceButton.setGeometry(QtCore.QRect(250, 300, 113, 32))
         self.chatButton.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
         self.voiceButton.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
-        self.voiceButton.setStyleSheet("color: rgb(255, 144, 77);\n"
-"background-color:\'white\';\n"
-"font: 75 italic 16pt \"Optima\";\n"
-"border:0px solid \'white\';\n"
-"border-radius: 6px;")
+        self.voiceButton.setStyleSheet("""QPushButton{color: rgb(255, 144, 77);
+background-color: 'white';
+font: 75 italic 16pt "Optima";
+border:0px solid;
+border-radius: 6px;}
+QPushButton::hover{background-color:bisque;
+}"""
+)
+
         self.voiceButton.setObjectName("voiceButton")
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(170, 340, 151, 141))
@@ -71,6 +77,7 @@ class Ui_MainWindow():
         self.label.setText(_translate("MainWindow", "How do you want to ask potato?"))
         self.chatButton.setText(_translate("MainWindow", "Chat"))
         self.voiceButton.setText(_translate("MainWindow", "Voice"))
+
 
 
 if __name__ == "__main__":
