@@ -35,7 +35,7 @@ class Ui_Form(object):
         self.typingBox.setPlaceholderText("type here...")
         self.typingBox.setObjectName("typingBox")
         self.sendButton = QtWidgets.QPushButton(Form)
-        self.sendButton.setGeometry(QtCore.QRect(410, 540, 61, 21))
+        self.sendButton.setGeometry(QtCore.QRect(410, 545, 61, 21))
         self.sendButton.setObjectName("sendButton")
         self.sendButton.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
         self.sendButton.setStyleSheet("""QPushButton{color: rgb(255, 144, 77);
