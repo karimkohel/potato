@@ -4,9 +4,10 @@ class ClientSock():
 
     HEADERSIZE = 20
 
-    def __init__(self, ip, port):
+    def __init__(self, ip, port, functions):
         self.PORT = port
         self.IP = ip
+        self.functions = functions
         # self.clientSocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
     def connect(self):
@@ -44,5 +45,12 @@ class ClientSock():
         response = fullMsg[:-1]
         return response, flag
 
+    def flagHandler(self, flag):
+        if flag
+
+
+
     def close(self):
         self.clientSocket.close()
+
+
