@@ -5,10 +5,10 @@ import requests
 from datetime import datetime
 
 def randomRange(response, server, client):
-    server.sendMessage(client, "till what number should i guess"+"1")
+    server.sendMessage(client, "till what number should i guess")
     range1 = server.getMessage(client)
     number = random.randint(0, int(range1))
-    server.sendMessage(client, response + " " + str(number)+"0")
+    server.sendMessage(client, response + " " + str(number), 0)
     # client.close()
 
 def googleSearch(response, server, client):

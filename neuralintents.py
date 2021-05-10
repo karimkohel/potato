@@ -187,4 +187,4 @@ class GenericAssistant(IAssistant):
             self.intent_methods[ints[0]['intent']](self._get_response(ints, self.intents), serverObj, clientSock)
         else:
             # if no functino map just send response
-            serverObj.sendMessage(clientSock, self._get_response(ints, self.intents)+"0")
+            serverObj.sendMessage(clientSock, self._get_response(ints, self.intents), 0)
