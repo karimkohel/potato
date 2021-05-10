@@ -21,11 +21,15 @@ class Ui_Form(object):
         self.chatBox = QtWidgets.QTextBrowser(Form)
         self.chatBox.setGeometry(QtCore.QRect(20, 20, 461, 511))
         self.chatBox.setStyleSheet("background-color: rgb(250, 255, 228);\n"
-"background-color: rgb(255, 249, 239);")
+"background-color: rgb(255, 249, 239);"
+"border-radius: 4px;")
         self.chatBox.setObjectName("chatBox")
         self.typingBox = QtWidgets.QTextEdit(Form)
         self.typingBox.setGeometry(QtCore.QRect(20, 540, 381, 31))
-        self.typingBox.setStyleSheet("background-color: rgb(253, 251, 255);")
+        self.typingBox.setStyleSheet("background-color: rgb(253, 251, 255);"
+        "border-radius: 4px;"
+        "border: 1px solid 'gainsboro';"
+        )
         self.typingBox.setObjectName("typingBox")
         self.sendButton = QtWidgets.QPushButton(Form)
         self.sendButton.setGeometry(QtCore.QRect(410, 540, 61, 21))
@@ -34,7 +38,7 @@ class Ui_Form(object):
         self.sendButton.setStyleSheet("""QPushButton{color: rgb(255, 144, 77);
 background-color: 'white';
 font: 75 italic 16pt "Optima";
-border:0px solid;
+border: 1px solid 'gainsboro';
 border-radius: 4px;}
 QPushButton::hover{background-color:lightcyan;
 }"""
@@ -47,7 +51,7 @@ QPushButton::hover{background-color:lightcyan;
 background-color: 'white';
 font: 75 italic 16pt "Optima";
 font-size: 13px;
-border:0px solid;
+border: 1px solid 'gainsboro';
 border-radius: 4px;}
 QPushButton::hover{background-color:lightcyan;
 }"""
