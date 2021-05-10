@@ -22,12 +22,12 @@ def youtubeSearch(response,server,client):
     server.sendMessage(client, response)
     webbrowser.open(youtube_Url+search)
 
-def Time(response,server,client):
+def time(response,server,client):
     server.getMessage(client)
     getTime=now.strftime("%H %M %p")
     server.sendMessage(client, response + " " + getTime)
 
-def Date(response,server,client):
+def date(response,server,client):
     server.getMessage(client)
     getDate=now.strftime("%A ,%B %d, %Y")
     server.sendMessage(client, response + " " + getDate)
