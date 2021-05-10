@@ -15,6 +15,7 @@ class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Start Chat")
         Form.resize(500, 600)
+        Form.setFixedSize(500, 600)
         Form.setStyleSheet("background-color: rgb(255, 250, 199);")
         self.chatBox = QtWidgets.QTextBrowser(Form)
         self.chatBox.setGeometry(QtCore.QRect(20, 20, 461, 511))
