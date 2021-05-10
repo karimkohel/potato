@@ -73,6 +73,7 @@ QPushButton::hover{background-color:lightcyan;
     def clickButton(self):
         print(f"your msg is: " + self.typingBox.toPlainText())
         self.typingBox.clear()
+        self.typingBox.setPlaceholderText("")
     
 
 if __name__ == "__main__":
