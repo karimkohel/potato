@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtGui import QCursor, QIcon, QPixmap, QFont
 
 
 class Ui_Form(object):
@@ -29,6 +30,7 @@ class Ui_Form(object):
         self.sendButton = QtWidgets.QPushButton(Form)
         self.sendButton.setGeometry(QtCore.QRect(410, 540, 61, 21))
         self.sendButton.setObjectName("sendButton")
+        self.sendButton.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
         self.sendButton.setStyleSheet("""QPushButton{color: rgb(255, 144, 77);
 background-color: 'white';
 font: 75 italic 16pt "Optima";
@@ -40,6 +42,7 @@ QPushButton::hover{background-color:lightcyan;
         self.endButton = QtWidgets.QPushButton(Form)
         self.endButton.setGeometry(QtCore.QRect(410, 570, 61, 21))
         self.endButton.setObjectName("endButton")
+        self.endButton.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
         self.endButton.setStyleSheet("""QPushButton{color: rgb(255, 144, 77);
 background-color: 'white';
 font: 75 italic 16pt "Optima";
