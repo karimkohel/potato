@@ -39,7 +39,7 @@ class ServerSock():
 
     def sendMessage(self, clientSocket, msg, flag = 1):
 
-        data = f'{len(msg):<{self.HEADERSIZE}}'+ msg + str(flag)
+        data = f'{len(msg)+1:<{self.HEADERSIZE}}'+ msg + str(flag)
         codedMsg = bytes(data, "utf-8")
         clientSocket.send(codedMsg)
 
