@@ -75,9 +75,13 @@ QPushButton::hover{background-color:lightcyan;
     def clickButton(self):
         msg = self.typingBox.toPlainText()
         client.sendMsg(msg)
-        self.chatBox.append(f"You: " + self.typingBox.toPlainText())
+        self.chatBox.setStyleSheet("font:  75 italic 16pt 'Optima';"
+        "color: 'red';"
+        )
+        self.chatBox.append(f"you: " + self.typingBox.toPlainText())
+        
         response = client.recvMsg()
-        self.chatBox.append(f"Potato: " + response)
+        self.chatBox.append(f"potato: " + response)
         self.typingBox.clear()
         self.typingBox.setPlaceholderText("")
     
