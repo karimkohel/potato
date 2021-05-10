@@ -14,7 +14,7 @@
 
         {
             "tag": "compation",
-            "patterns": ["how are you poppy", "how are you doing", "how are you today", "are you doing good", "how is it going", "hey how are you", "hi how is it", "are you well", "are you okay", "how is it going", "how are you doing"],
+            "patterns": ["how are you", "how are you doing", "how are you today", "are you doing good", "how is it going", "hey how are you", "hi how is it", "are you well", "are you okay", "how is it going", "how are you doing"],
             "responses": ["I'm fine thank you", "I'm doing good how about you", "thank you i'm well", "how cute of you to ask", "doing greate thank you", "superb", "all is fine", "i'm good how about you", "tell me about you first", "all good and ready to serve you", "in top shape to help you out", "looking greate for a virtual being", "i'm good if you're good", "honestly i am a little bit anxious from your demands", "Feeling cute, might serve you a little what do you need done", "honestly I'm doing greate and chilling in my void"]
         },
 
