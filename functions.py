@@ -2,13 +2,13 @@ import speech
 import random
 import webbrowser
 import requests
-from datetime import datetime, now
+from datetime import datetime
 
 def randomRange(response, server, client):
     server.sendMessage(client, "till what number should i guess")
     range1 = server.getMessage(client)
     number = random.randint(0, int(range1))
-    server.sendMessage(client, response + " " + str(number))
+    server.sendMessage(client, response + " " + str(number), 0)
     # client.close()
 
 def googleSearch(response, server, client):
@@ -23,15 +23,15 @@ def youtubeSearch(response, server, client):
     server.sendMessage(client, response)
     webbrowser.open(youtubeUrl + search)
 
-def time(response, server, client):
-    server.getMessage(client)
-    getTime = now.strftime("%H %M %p")
-    server.sendMessage(client, response + " " + getTime)
+# def time(response, server, client):
+#     server.getMessage(client)
+#     getTime = now.strftime("%H %M %p")
+#     server.sendMessage(client, response + " " + getTime)
 
-def date(response, server, client):
-    server.getMessage(client)
-    getDate = now.strftime("%A ,%B %d, %Y")
-    server.sendMessage(client, response + " " + getDate)
+# def date(response, server, client):
+#     server.getMessage(client)
+#     getDate = now.strftime("%A ,%B %d, %Y")
+#     server.sendMessage(client, response + " " + getDate)
 
 def getWeather(response, server, client):
     # Need to put Location instead of cairo

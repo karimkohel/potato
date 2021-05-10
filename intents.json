@@ -63,7 +63,7 @@
         {
             "tag": "random",
             "patterns": ["get me a random number", "get a random value", "give me a number", "generate a number", "pick a number"],
-            "responses": ["a random number between 0 and 100 is", "its", "that would be", "true randomness is not real but take", "what do you think about"]
+            "responses": ["a random number would be", "its", "that would be", "true randomness is not real but take", "what do you think about"]
         },
 
         {

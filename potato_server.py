@@ -1,21 +1,20 @@
 import socket
 from botsocks import ServerSock
 import neuralintents
+import threading
 from functions import mappings
 
-serverObj =  ServerSock(socket.gethostbyname(socket.gethostname()), 5000)
 
 bot = neuralintents.GenericAssistant("intents.json", mappings, "model")
 bot.train_model()
 bot.save_model()
 # bot.load_model()
 
-clientSocket = serverObj.accept()
+serverObj =  ServerSock(socket.gethostbyname(socket.gethostname()), 5000, bot)
+
+
 while True:
+    clientSocket = serverObj.accept()
 
-    msg = serverObj.getMessage(clientSocket)
-
-    if msg == "exit":
-        break
-    else:
-        bot.request(msg, serverObj, clientSocket)
+    t = threading.Thread(target=serverObj.handelClient, args=(clientSocket, ))
+    t.start()
