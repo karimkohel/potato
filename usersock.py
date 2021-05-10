@@ -8,6 +8,7 @@ class ClientSock():
         self.PORT = port
         self.IP = ip
         self.clientSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.clientSocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
     def connect(self):
         self.clientSocket.connect((self.IP, self.PORT))
