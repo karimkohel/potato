@@ -67,6 +67,7 @@ QPushButton::hover{background-color:lightcyan;
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
         self.sendButton.clicked.connect(self.clickButton)
+        self.endButton.clicked.connect(self.closeButton)
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Start Chat", "Start Chat"))
@@ -84,7 +85,11 @@ QPushButton::hover{background-color:lightcyan;
         self.chatBox.append(f"potato: " + response)
         self.typingBox.clear()
         self.typingBox.setPlaceholderText("")
-    
+    def closeButton(self):
+        client.close()
+        
+
+
 
 if __name__ == "__main__":
     import sys
