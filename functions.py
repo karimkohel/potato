@@ -1,7 +1,8 @@
 import speech
 import random
 import webbrowser
-from datetime import datetime
+import requests
+from datetime import datetime, now
 
 def randomRange(response, server, client):
     server.sendMessage(client, "till what number should i guess")
@@ -10,29 +11,29 @@ def randomRange(response, server, client):
     server.sendMessage(client, response + " " + str(number))
     # client.close()
 
-def googleSearch(response,server,client):
-    search=server.getMessage(client)
-    URl=("https://www.google.com/search?q=")
+def googleSearch(response, server, client):
+    search = server.getMessage(client)
+    URl = ("https://www.google.com/search?q=")
     server.sendMessage(client, response)
-    webbrowser.open(URl+search)
+    webbrowser.open(URl + search)
 
-def youtubeSearch(response,server,client):
-    search=server.getMessage(client)
-    youtube_Url=("https://www.youtube.com/results?search_query=")
+def youtubeSearch(response, server, client):
+    search = server.getMessage(client)
+    youtubeUrl = ("https://www.youtube.com/results?search_query=")
     server.sendMessage(client, response)
-    webbrowser.open(youtube_Url+search)
+    webbrowser.open(youtubeUrl + search)
 
-def Time(response,server,client):
+def time(response, server, client):
     server.getMessage(client)
-    getTime=now.strftime("%H %M %p")
+    getTime = now.strftime("%H %M %p")
     server.sendMessage(client, response + " " + getTime)
 
-def Date(response,server,client):
+def date(response, server, client):
     server.getMessage(client)
-    getDate=now.strftime("%A ,%B %d, %Y")
+    getDate = now.strftime("%A ,%B %d, %Y")
     server.sendMessage(client, response + " " + getDate)
 
-def getWeather(response,server,client):
+def getWeather(response, server, client):
     # Need to put Location instead of cairo
     api = 'http://api.openweathermap.org/data/2.5/weather?q=Cairo&appid=f1e62ab85ff8b2eca979678d57a6de2e&units=metric' 
     try:
@@ -40,7 +41,8 @@ def getWeather(response,server,client):
         allData = requests.get(api).json()
         weather = allData['weather'][0]['description']
         temp = allData['main']['temp']
-        server.sendMessage(client,response + " " + weather + ", with temperatures around " + str(int(temp)) + " degrees")
+        server.sendMessage(client, response + " " + weather + ", with temperatures around " + str(int(temp)) + " degrees")
+
     except TimeoutError:
        server.sendMessage(client, response + " internet connection error occured, try again later")
     except Exception:
