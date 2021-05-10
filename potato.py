@@ -19,7 +19,7 @@ grid = QGridLayout()
 potatoWindow = QWidget()
 potatoWindow.setWindowTitle("Hey, potato is here!")
 potatoWindow.setFixedSize(500,600)
-potatoWindow.move(4000, 200)               #position of the window
+# potatoWindow.move(4000, 200)     #position of the window may vary depending on screen size
 potatoWindow.setStyleSheet("background: #FFFDD0;")
 
 def frameOne():
