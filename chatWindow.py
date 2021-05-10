@@ -71,7 +71,8 @@ QPushButton::hover{background-color:lightcyan;
         self.sendButton.setText(_translate("Start Chat", "Send"))
         self.endButton.setText(_translate("Start Chat", "End Chat"))
     def clickButton(self):
-        print(f"your msg is: " + self.typingBox.toPlainText())
+        self.chatBox.append(f"your msg is: " + self.typingBox.toPlainText())
+        
         self.typingBox.clear()
         self.typingBox.setPlaceholderText("")
     
