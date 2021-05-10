@@ -10,6 +10,8 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QCursor, QIcon, QPixmap, QFont
+from PyQt5.QtWidgets import QLineEdit, QTextEdit
+
 
 
 class Ui_Form(object):
@@ -59,16 +61,20 @@ border-radius: 4px;}
 QPushButton::hover{background-color:lightcyan;
 }"""
         )
-
+        
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
-
+        self.sendButton.clicked.connect(self.clickButton)
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Start Chat", "Start Chat"))
         self.sendButton.setText(_translate("Start Chat", "Send"))
         self.endButton.setText(_translate("Start Chat", "End Chat"))
-
+    def clickButton(self):
+        print(f"your msg is: " + self.typingBox.toPlainText())
+        self.typingBox.clear()
+        self.typingBox.setPlaceholderText("")
+    
 
 if __name__ == "__main__":
     import sys

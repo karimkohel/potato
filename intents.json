@@ -49,7 +49,7 @@
         },
 
         {
-            "tag": "Date",
+            "tag": "date",
             "patterns": ["what day are we today?", "What's the day", "Tell me the date", "Date, please!", "Which day are"],
             "responses": ["Its", " anyway its", "Are you late for something? because its", "Today is", "it should be", "According to the calender its", "wait i'll check, yeah its", ""]
         },
@@ -63,28 +63,32 @@
         {
             "tag": "random",
             "patterns": ["get me a random number", "get a random value", "give me a number", "generate a number", "pick a number"],
-            "responses": ["a random number between 0 and 100 is", "its", "that would be", "true randomness is not real but take", "what do you think about"]
+            "responses": ["a random number would be", "its", "that would be", "true randomness is not real but take", "what do you think about"]
         },
 
         {
             "tag": "headsortails",
-            "patterns": ["head or tail", "flip a coin","tail side or head side","toss a coin"],
+            "patterns": ["head or tail", "flip a coin", "tail side or head side", "toss a coin"],
             "responses": ["its tails","its heads","try your luck! heads?", "try your luck! tails?", "ok wait i will flip a coin now, ding, oh no it landed exactly on its edge, better luck next time", "it's gonna be heads for this one", "hmm i dont know, maybe tails", "tails", "heads"]
         },
 
         {
-            "tag": "googlesearch",
-            "patterns": ["tell me something about", "open search on","what is","Want information on","open a search tab"],
-            "responses": ["On it","wait a sec.","Your search is ready","Done!","Here you go","Alright!"]
+            "tag": "weather",
+            "patterns": ["what temperature is it", "do you have the weather", "what's the temperature", "what's the weather", "how hot is it", "how hot is it", "tell me the weather", "do you know the weather", "whats the weather today"],
+            "responses": ["what a day, its", "your area is expected to be", "today is", "expect", "dress well because today its", "today should be", "its gonna be", "its going to be", "looks like", "today feels like", "it feels like"]
         },
 
         {
-            "tag": "Youtube",
-            "patterns": ["get me a video on youtube", "open a video","I want something to watch","entertain me with"],
-            "responses": ["On it","wait a sec.","Here is your video","Done!","Here you go","Prepared this for you hone","Alright!"]
+            "tag": "search",
+            "patterns": ["can you search for", "search that", "look it up", "can you look it up", "search for", "look something up for me", "google something", "google this"],
+            "responses": ["What do you want me to search for", "what should is search for", "hit me with your search", "what do you need to search for", "your search is my command, literally, what should i search for", "Here you go"]
+        },
+
+        {
+            "tag": "youtube",
+            "patterns": ["get me a video on youtube", "open a video", "I want something to watch", "entertain me", "can you play some music", "play music", "can you play a song", "put on music", "start the music", "play me a song", "i want to hear some music"],
+            "responses": ["what should i start for you", "what do you want to play", "ok, I'm in the mood too, what should i start", "what are you looking for", "looking for something specific", "looking to procrastinat are you? what should i start for you"]
         }
-
-      
-
+        
     ]
 }
