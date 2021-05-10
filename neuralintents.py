@@ -188,4 +188,3 @@ class GenericAssistant(IAssistant):
         else:
             # if no functino map just send response
             serverObj.sendMessage(clientSock, self._get_response(ints, self.intents))
-            # clientSock.close()
