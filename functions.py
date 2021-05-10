@@ -32,7 +32,7 @@ def time(response,server,client):
 def date(response,server,client):
     server.getMessage(client)
     nowInfo = datetime.now()
-    getDate = nowInfo.strftime("%A ,%B %d, %Y")
+    getDate = now.strftime("%A ,%B %d, %Y")
     server.sendMessage(client, response + " " + getDate)
 
 def getWeather(response,server,client):
