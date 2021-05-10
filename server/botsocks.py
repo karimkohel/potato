@@ -3,10 +3,11 @@ import socket
 class ServerSock():
     HEADERSIZE = 20
 
-    def __init__(self, IP, PORT):
+    def __init__(self, IP, PORT, bot):
         self.serverSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.serverSocket.bind((IP, PORT))
         self.serverSocket.listen(10)
+        self.bot = bot
         print("Listening on " + str(IP) + ":" + str(PORT))
         
     def accept(self):
@@ -36,9 +37,19 @@ class ServerSock():
             
         return fullMsg[self.HEADERSIZE:]
 
-    def sendMessage(self, clientSocket, msg):
+    def sendMessage(self, clientSocket, msg, flag = 1):
 
-        data = f'{len(msg):<{self.HEADERSIZE}}'+ msg
+        data = f'{len(msg)+1:<{self.HEADERSIZE}}'+ msg + str(flag)
         codedMsg = bytes(data, "utf-8")
         clientSocket.send(codedMsg)
 
+    def handelClient(self, clientSocket):
+        try:
+            msg = self.getMessage(clientSocket)
+            self.bot.request(msg, self, clientSocket)
+        except ConnectionResetError:
+            pass
+        except Exception as e:
+            print(e)
+        print("closing connection")
+        clientSocket.close()

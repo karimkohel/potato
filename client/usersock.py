@@ -4,12 +4,14 @@ class ClientSock():
 
     HEADERSIZE = 20
 
-    def __init__(self, ip, port):
+    def __init__(self, ip, port, functions):
         self.PORT = port
         self.IP = ip
-        self.clientSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.functions = functions
+        # self.clientSocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
     def connect(self):
+        self.clientSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.clientSocket.connect((self.IP, self.PORT))
 
     def sendMsg(self, msg):
@@ -38,4 +40,17 @@ class ClientSock():
                 newMsg = True
                 break
             
-        return fullMsg[self.HEADERSIZE:]
+        fullMsg = fullMsg[self.HEADERSIZE:]
+        flag = fullMsg[-1]
+        response = fullMsg[:-1]
+        return response, flag
+
+    def flagHandler(self, flag):
+        if flag
+
+
+
+    def close(self):
+        self.clientSocket.close()
+
+
