@@ -49,6 +49,12 @@
         },
 
         {
+            "tag": "Date",
+            "patterns": ["what day are we today?", "What's the day", "Tell me the date", "Date, please!", "Which day are"],
+            "responses": ["Its", " anyway its", "Are you late for something? because its", "Today is", "it should be", "According to the calender its", "wait i'll check, yeah its", ""]
+        },
+
+        {
             "tag": "jokes",
             "patterns": ["tell me a joke", "are you funny", "can you tell jokes", "i love jokes", "can you tell a funny joke", "funny joke", "do you have jokes"],
             "responses": ["No, I'm not funny", "Knock knock", "You're not even funny", "I hate your sense of humor", "Go ask siri", "Ok, but no", "Don't you have friends for that?", "I'm not even a real person go joke around with other people", "Really? are you that lonely"]
@@ -58,6 +64,27 @@
             "tag": "random",
             "patterns": ["get me a random number", "get a random value", "give me a number", "generate a number", "pick a number"],
             "responses": ["a random number between 0 and 100 is", "its", "that would be", "true randomness is not real but take", "what do you think about"]
+        },
+
+        {
+            "tag": "headsortails",
+            "patterns": ["head or tail", "flip a coin","tail side or head side","toss a coin"],
+            "responses": ["its tails","its heads","try your luck! heads?", "try your luck! tails?", "ok wait i will flip a coin now, ding, oh no it landed exactly on its edge, better luck next time", "it's gonna be heads for this one", "hmm i dont know, maybe tails", "tails", "heads"]
+        },
+
+        {
+            "tag": "googlesearch",
+            "patterns": ["tell me something about", "open search on","what is","Want information on","open a search tab"],
+            "responses": ["On it","wait a sec.","Your search is ready","Done!","Here you go","Alright!"]
+        },
+
+        {
+            "tag": "Youtube",
+            "patterns": ["get me a video on youtube", "open a video","I want something to watch","entertain me with"],
+            "responses": ["On it","wait a sec.","Here is your video","Done!","Here you go","Prepared this for you hone","Alright!"]
         }
+
+      
+
     ]
 }
