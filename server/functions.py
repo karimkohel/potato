@@ -11,10 +11,7 @@ def randomRange(response, server, client):
     server.sendMessage(client, response + " " + str(number), 0)
 
 def googleSearch(response,server,client):
-    search = server.getMessage(client)
-    URl = ("https://www.google.com/search?q=")
-    server.sendMessage(client, response)
-    webbrowser.open(URl + search)
+    server.sendMessage(client, response, 2)
 
 def youtubeSearch(response,server,client):
     search = server.getMessage(client)
@@ -38,5 +35,6 @@ def getWeather(response, server, client):
 
 mappings = {
     "random" : randomRange,
-    "weather": getWeather,
+    "weather" : getWeather,
+    "search" : googleSearch
 }
