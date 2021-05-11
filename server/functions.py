@@ -23,7 +23,12 @@ def getDate(response,server, client):
     date = datetime.now()
     dateString = date.strftime(" %A ,%B %d, %Y ")
     server.sendMessage(client, response + " "+ dateString, 0)
-    
+
+def getTime(response,server, client):
+    time = datetime.now()
+    timeString = time.strftime( "%H: %M: %S")
+    server.sendMessage(client, response + " "+ timeString, 0) 
+
 def getWeather(response, server, client):
     # Need to put Location instead of cairo
     api = 'http://api.openweathermap.org/data/2.5/weather?q=Cairo&appid=f1e62ab85ff8b2eca979678d57a6de2e&units=metric' 
