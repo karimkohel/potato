@@ -2,6 +2,8 @@ import random
 import webbrowser
 from datetime import datetime
 import requests
+import re
+import urllib
 
 
 def randomRange(response, server, client):
@@ -29,6 +31,21 @@ def getTime(response,server, client):
     timeString = time.strftime( "%H: %M: %S")
     server.sendMessage(client, response + " "+ timeString, 0) 
 
+def playMusic(response,server,client):
+    
+    songName = server.getMessage(client)
+    try:
+        searchLink = 'https://www.youtube.com/results?search_query={}'.format(songName.replace(" ", "+"))
+        htmlPage = urllib.request.urlopen(searchLink)
+        video_ids = re.findall(r"watch\?v=(\S{11})", htmlPage.read().decode())
+        videoLink = "https://www.youtube.com/watch?v=" + video_ids[0]
+        server.sendMessage(client, response,4)
+        
+    except TimeoutError:
+        server.sendMessage(client,"internet connection error occured, try again later",0)
+   
+   
+
 def getWeather(response, server, client):
     # Need to put Location instead of cairo
     api = 'http://api.openweathermap.org/data/2.5/weather?q=Cairo&appid=f1e62ab85ff8b2eca979678d57a6de2e&units=metric' 
@@ -39,12 +56,13 @@ def getWeather(response, server, client):
         server.sendMessage(client, response + " " + weather + ", with temperatures around " + str(int(temp)) + " degrees", 0)
 
     except TimeoutError:
-        server.sendMessage(client, response + " internet connection error occured, try again later", 0)
+        server.sendMessage(client,  " internet connection error occured, try again later", 0)
     except Exception:
-        server.sendMessage(client, response  + " An error occured, try again later", 0)
+        server.sendMessage(client,  " An error occured, try again later", 0)
 
 mappings = {
     "random" : randomRange,
     "weather" : getWeather,
-    "search" : googleSearch
+    "search" : googleSearch,
+    "play " : playMusic
 }
