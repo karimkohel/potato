@@ -81,8 +81,23 @@ class Ui_Form(object):
         self.sendButton.setText(_translate("Start Chat", "Send"))
         self.endButton.setText(_translate("Start Chat", "End Chat"))
 
-    def showResponse(self, msg):
-        pass
+    def showResponse(self, response):
+        """
+        this is a private helper function to help claen the clickButton method
+        takes in server response to show and handle on screen
+        """
+        self.chatBox.append(f"potato: " + response)
+
+    def showInput(self):
+        """
+        this is a private helper function to help claen the clickButton method
+        returns the input of user when button is clicked
+        """
+        msg = self.typingBox.toPlainText()
+        self.chatBox.append(f"you: " + self.typingBox.toPlainText())
+        self.typingBox.clear()
+        self.typingBox.setPlaceholderText("")
+        return msg
 
     def clickButton(self):
 
@@ -90,19 +105,17 @@ class Ui_Form(object):
                                     "color: 'red';"
         )
 
-        msg = self.typingBox.toPlainText()
+        msg = self.showInput()
         self.client.sendMsg(msg)
-        self.chatBox.append(f"you: " + self.typingBox.toPlainText())
-        
-        response, flag = self.client.recvMsg()
 
-        self.chatBox.append(f"potato: " + response)
-        self.typingBox.clear()
-        self.typingBox.setPlaceholderText("")
+        response, flag = self.client.recvMsg()
+        self.showResponse(response)
+
     
         self.client.flagHandler(flag, (self.typingBox, self.chatBox))
         print(flag)
 
+        # handle this in client flag handler
         if flag == "0":
             self.client.close()
             self.client.connect() 
