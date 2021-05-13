@@ -1,5 +1,4 @@
 #from speech import speak, takeCommand
-from server.functions import playMusic
 import webbrowser
 import urllib
 import re
