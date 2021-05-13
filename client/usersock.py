@@ -47,9 +47,8 @@ class ClientSock():
     def flagHandler(self, flag, chatObj=None):
         if flag == 2:
             self.functions["2"](chatObj)
-        elif flag == 3:
-            self.functions["3"](chatObj)
-
+        # elif flag == 3:
+        #     self.functions["3"](chatObj)
 
     def close(self):
         self.clientSocket.close()
