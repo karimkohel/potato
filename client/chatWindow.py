@@ -18,6 +18,7 @@ client = ClientSock(socket.gethostbyname(socket.gethostname()),5000, mappings)
 client.connect()
 
 class Ui_Form(object):
+
     def setupUi(self, Form):
         Form.setObjectName("Start Chat")
         Form.resize(500, 600)
@@ -26,16 +27,17 @@ class Ui_Form(object):
         self.chatBox = QtWidgets.QTextBrowser(Form)
         self.chatBox.setGeometry(QtCore.QRect(20, 20, 461, 511))
         self.chatBox.setStyleSheet("background-color: rgb(250, 255, 228);\n"
-"background-color: rgb(255, 249, 239);"
-"border-radius: 4px;")
+                                    "background-color: rgb(255, 249, 239);"
+                                    "border-radius: 4px;"
+        )
         self.chatBox.setObjectName("chatBox")
         self.typingBox = QtWidgets.QTextEdit(Form)
         self.typingBox.setGeometry(QtCore.QRect(20, 545, 381, 31))
         self.typingBox.setPlaceholderText("type here...")
         self.typingBox.setStyleSheet("background-color: rgb(253, 251, 255);"
-        "border-radius: 4px;"
-        "border: 1px solid 'gainsboro';"
-        "font: 75 16pt 'Optima';"
+                                    "border-radius: 4px;"
+                                    "border: 1px solid 'gainsboro';"
+                                    "font: 75 16pt 'Optima';"
         )
         self.typingBox.setPlaceholderText("type here...")
         self.typingBox.setObjectName("typingBox")
@@ -44,41 +46,42 @@ class Ui_Form(object):
         self.sendButton.setObjectName("sendButton")
         self.sendButton.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
         self.sendButton.setStyleSheet("""QPushButton{color: rgb(255, 144, 77);
-background-color: 'white';
-font: 75 italic 16pt "Optima";
-border: 1px solid 'gainsboro';
-border-radius: 4px;}
-QPushButton::hover{background-color:lightcyan;
-}"""
+                                        background-color: 'white';
+                                        font: 75 italic 16pt "Optima";
+                                        border: 1px solid 'gainsboro';
+                                        border-radius: 4px;}
+                                        QPushButton::hover{background-color:lightcyan;
+                                        }"""
         )
         self.endButton = QtWidgets.QPushButton(Form)
         self.endButton.setGeometry(QtCore.QRect(410, 570, 61, 21))
         self.endButton.setObjectName("endButton")
         self.endButton.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
         self.endButton.setStyleSheet("""QPushButton{color: rgb(255, 144, 77);
-background-color: 'white';
-font: 75 italic 16pt "Optima";
-font-size: 13px;
-border: 1px solid 'gainsboro';
-border-radius: 4px;}
-QPushButton::hover{background-color:lightcyan;
-}"""
+                                        background-color: 'white';
+                                        font: 75 italic 16pt "Optima";
+                                        font-size: 13px;
+                                        border: 1px solid 'gainsboro';
+                                        border-radius: 4px;}
+                                        QPushButton::hover{background-color:lightcyan;
+                                        }"""
         )
-        
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
         self.sendButton.clicked.connect(self.clickButton)
         self.endButton.clicked.connect(self.closeButton)
+
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Start Chat", "Start Chat"))
         self.sendButton.setText(_translate("Start Chat", "Send"))
         self.endButton.setText(_translate("Start Chat", "End Chat"))
+
     def clickButton(self):
         msg = self.typingBox.toPlainText()
         client.sendMsg(msg)
         self.chatBox.setStyleSheet("font:  75 italic 16pt 'Optima';"
-        "color: 'red';"
+                                    "color: 'red';"
         )
         self.chatBox.append(f"you: " + self.typingBox.toPlainText())
         
@@ -95,11 +98,9 @@ QPushButton::hover{background-color:lightcyan;
             client.close()
             client.connect() 
     
-    
     def closeButton(self):
         client.close()
         
-
 
 
 if __name__ == "__main__":
