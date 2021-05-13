@@ -14,12 +14,16 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QCursor, QIcon, QPixmap, QFont
 from PyQt5.QtWidgets import QLineEdit, QTextEdit
 
-client = ClientSock(socket.gethostbyname(socket.gethostname()),5000, mappings)
-client.connect()
 
 class Ui_Form(object):
 
     def setupUi(self, Form):
+        try:
+            self.client = ClientSock(socket.gethostbyname(socket.gethostname()),5000, mappings)
+            self.client.connect()
+        except ConnectionRefusedError:
+            print(" - Connection Error: Server didn't connect")
+
         Form.setObjectName("Start Chat")
         Form.resize(500, 600)
         Form.setFixedSize(500, 600)
@@ -77,29 +81,34 @@ class Ui_Form(object):
         self.sendButton.setText(_translate("Start Chat", "Send"))
         self.endButton.setText(_translate("Start Chat", "End Chat"))
 
+    def showResponse(self, msg):
+        pass
+
     def clickButton(self):
-        msg = self.typingBox.toPlainText()
-        client.sendMsg(msg)
+
         self.chatBox.setStyleSheet("font:  75 italic 16pt 'Optima';"
                                     "color: 'red';"
         )
+
+        msg = self.typingBox.toPlainText()
+        self.client.sendMsg(msg)
         self.chatBox.append(f"you: " + self.typingBox.toPlainText())
         
-        response, flag = client.recvMsg()
+        response, flag = self.client.recvMsg()
 
         self.chatBox.append(f"potato: " + response)
         self.typingBox.clear()
         self.typingBox.setPlaceholderText("")
     
-        client.flagHandler(flag, (self.typingBox, self.chatBox))
+        self.client.flagHandler(flag, (self.typingBox, self.chatBox))
         print(flag)
 
         if flag == "0":
-            client.close()
-            client.connect() 
+            self.client.close()
+            self.client.connect() 
     
     def closeButton(self):
-        client.close()
+        self.client.close()
         
 
 
