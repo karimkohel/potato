@@ -45,7 +45,10 @@ class ClientSock():
         return response, flag
 
     def flagHandler(self, flag, chatObj=None):
-        if flag == 2:
+        if flag == 0:
+            self.close()
+            self.connect()
+        elif flag == 2:
             self.functions["2"](chatObj)
         # elif flag == 3:
         #     self.functions["3"](chatObj)

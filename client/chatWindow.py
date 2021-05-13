@@ -111,15 +111,8 @@ class Ui_Form(object):
         response, flag = self.client.recvMsg()
         self.showResponse(response)
 
-    
         self.client.flagHandler(flag, (self.typingBox, self.chatBox))
-        print(flag)
 
-        # handle this in client flag handler
-        if flag == "0":
-            self.client.close()
-            self.client.connect() 
-    
     def closeButton(self):
         self.client.close()
         
