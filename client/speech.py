@@ -32,7 +32,7 @@ class SpeechPatternRecognizer():
         self.speaker.say(text)
         self.speaker.runAndWait()
 
-    def takeCommand(self):
+    def takeCommand(self, stealthMode = False):
 
         while True:
             try:
@@ -45,14 +45,18 @@ class SpeechPatternRecognizer():
 
                     return text
             except sr.UnknownValueError:
-                self.speak("Sorry didn't get that, try again")
+                if stealthMode:
+                    continue
+                else:
+                    self.speak("Sorry didn't get that, try again")
             except Exception:
                 self.speak("internal speech error")
 
     def waitForWakeupCall(self, text):
 
         while True:
-            audio = self.takeCommand()
+            audio = self.takeCommand(stealthMode=True)
+            print(audio)
 
             if audio.find(text) >= 0:
                 self.speak("hey there")
