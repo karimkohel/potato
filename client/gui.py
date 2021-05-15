@@ -14,7 +14,7 @@ from usersock import ClientSock
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QCursor, QIcon, QPixmap, QFont
 from mainWindow import Ui_MainWindow
-from chatWindow import Ui_Form
+from chatWindow import Ui_chatWindow
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)

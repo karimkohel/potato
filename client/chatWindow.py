@@ -6,12 +6,11 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QCursor, QIcon, QPixmap, QFont
 
 
-class Ui_Form(object):
+class Ui_chatWindow(object):
     def __init__(self, MainWindow):
         super().__init__()
         #self.setupUi(self)
         self.MainWindow = MainWindow
-
 
     def setupUi(self, Form):
         try:

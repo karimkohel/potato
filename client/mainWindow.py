@@ -4,7 +4,7 @@ from client_fx import mappings
 from usersock import ClientSock
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QCursor, QIcon, QPixmap, QFont
-from chatWindow import Ui_Form
+from chatWindow import Ui_chatWindow
 
 class Ui_MainWindow(QtWidgets.QMainWindow):
 
@@ -86,7 +86,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
 
     def startChat(self):
             self.window2 = QtWidgets.QWidget()
-            self.ui = Ui_Form(self.MainWindow)
+            self.ui = Ui_chatWindow(self.MainWindow)
             self.ui.setupUi(self.window2)
             self.window2.show()
             self.MainWindow.hide()
