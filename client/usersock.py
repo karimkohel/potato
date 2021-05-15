@@ -50,8 +50,9 @@ class ClientSock():
         elif flag == 2:
             self.functions["2"](response)
             self.restartConnection()
-        # elif flag == 3:
-        #     self.functions["3"](chatObj)
+        elif flag == 3:
+            self.functions["3"](response)
+            self.restartConnection()
 
 
     def restartConnection(self):
