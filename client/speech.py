@@ -32,7 +32,7 @@ class SpeechPatternRecognizer():
         self.speaker.say(text)
         self.speaker.runAndWait()
 
-    def takeCommand(self, stealthMode = False):
+    def listen(self, stealthMode = False):
 
         while True:
             try:
@@ -55,7 +55,7 @@ class SpeechPatternRecognizer():
     def waitForWakeupCall(self, text):
 
         while True:
-            audio = self.takeCommand(stealthMode=True)
+            audio = self.listen(stealthMode=True)
             print(audio)
 
             if audio.find(text) >= 0:
@@ -66,7 +66,7 @@ class SpeechPatternRecognizer():
 
     def confirmCommand(self, text = "are you sure you want to confirm your last command"):
         self.speak(text)
-        confirmation = self.takeCommand()
+        confirmation = self.listen()
         if confirmation.find("yes") >= 0:
             return True
         else:
