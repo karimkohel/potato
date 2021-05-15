@@ -21,49 +21,49 @@ class SpeechPatternRecognizer():
 
         # init text to speech engine with specified settings
         self.speaker = tts.init()
-        voices = speaker.getProperty('voices')
+        voices = self.speaker.getProperty('voices')
         self.speaker.setProperty('voice', voices[self.settings['voice_number']].id)
         self.speaker.setProperty('rate', self.settings["speech_speed"])
 
         # init speech recognizer engine with google
         self.recognizer = sr.Recognizer()
 
-        def speak(self, text):
-            speaker.say(text)
-            speaker.runAndWait()
+    def speak(self, text):
+        self.speaker.say(text)
+        self.speaker.runAndWait()
 
-        def takeCommand(self):
+    def takeCommand(self):
 
-            while True:
-                try:
-                    with sr.Microphone() as mic:
-                        self.recognizer.adjust_for_ambient_noise(mic, duration=0.2)
-                        audio = self.recognizer.listen(mic)
+        while True:
+            try:
+                with sr.Microphone() as mic:
+                    self.recognizer.adjust_for_ambient_noise(mic, duration=0.2)
+                    audio = self.recognizer.listen(mic)
 
-                        text = self.recognizer.recognize_google(audio)
-                        text = text.lower()
+                    text = self.recognizer.recognize_google(audio)
+                    text = text.lower()
 
-                        return text
-                except sr.UnknownValueError:
-                    self.speak("Sorry didn't get that, try again")
-                except Exception:
-                    self.speak("internal speech error")
+                    return text
+            except sr.UnknownValueError:
+                self.speak("Sorry didn't get that, try again")
+            except Exception:
+                self.speak("internal speech error")
 
-        def waitForWakeupCall(self, text):
+    def waitForWakeupCall(self, text):
 
-            while True:
-                audio = self.takeCommand()
+        while True:
+            audio = self.takeCommand()
 
-                if audio.find(text) >= 0:
-                    self.speak("hey there")
-                    break
-                else:
-                    continue
-
-        def confirmCommand(self, text = "are you sure you want to confirm your last command"):
-            self.speak(text)
-            confirmation = self.takeCommand()
-            if confirmation.find("yes") >= 0:
-                return True
+            if audio.find(text) >= 0:
+                self.speak("hey there")
+                break
             else:
-                return False
+                continue
+
+    def confirmCommand(self, text = "are you sure you want to confirm your last command"):
+        self.speak(text)
+        confirmation = self.takeCommand()
+        if confirmation.find("yes") >= 0:
+            return True
+        else:
+            return False
