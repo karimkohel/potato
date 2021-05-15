@@ -19,12 +19,6 @@ def googleSearch(response,server,client):
     server.sendMessage(client, url, 2)
 
 
-def youtubeSearch(response,server,client):
-    search = server.getMessage(client)
-    youtubeUrl = ("https://www.youtube.com/results?search_query=")
-    server.sendMessage(client, response)
-    webbrowser.open(youtubeUrl + search)
-
 def getDate(response,server, client):
     date = datetime.now()
     dateString = date.strftime(" %A ,%B %d, %Y ")
@@ -35,15 +29,15 @@ def getTime(response,server, client):
     timeString = time.strftime( "%H: %M: %S")
     server.sendMessage(client, response + " "+ timeString, 0) 
 
-def playMusic(response,server,client):
-    
-    songName = server.getMessage(client)
+def youtubeSearch(response,server,client):
+    server.sendMessage(client, response,1)
     try:
-        searchLink = 'https://www.youtube.com/results?search_query={}'.format(songName.replace(" ", "+"))
+        youtubeTopic = server.getMessage(client)
+        searchLink = 'https://www.youtube.com/results?search_query={}'.format(youtubeTopic.replace(" ", "+"))
         htmlPage = urllib.request.urlopen(searchLink)
         video_ids = re.findall(r"watch\?v=(\S{11})", htmlPage.read().decode())
         videoLink = "https://www.youtube.com/watch?v=" + video_ids[0]
-        server.sendMessage(client, response,4)
+        server.sendMessage(client, response,3)
         
     except TimeoutError:
         server.sendMessage(client,"internet connection error occured, try again later",0)
@@ -68,5 +62,5 @@ mappings = {
     "random" : randomRange,
     "weather" : getWeather,
     "search" : googleSearch,
-    "play " : playMusic
+    "youtube " : youtubeSearch
 }
