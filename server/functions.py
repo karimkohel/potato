@@ -13,7 +13,11 @@ def randomRange(response, server, client):
     server.sendMessage(client, response + " " + str(number), 0)
 
 def googleSearch(response,server,client):
-    server.sendMessage(client, response, 2)
+    server.sendMessage(client, response, 1)
+    searchTopic = server.getMessage(client)
+    url = "https://www.google.com/search?q=" + searchTopic
+    server.sendMessage(client, url, 2)
+
 
 def youtubeSearch(response,server,client):
     search = server.getMessage(client)
