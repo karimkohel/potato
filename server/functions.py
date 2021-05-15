@@ -30,14 +30,14 @@ def getTime(response,server, client):
     server.sendMessage(client, response + " "+ timeString, 0) 
 
 def youtubeSearch(response,server,client):
-    server.sendMessage(client, response,1)
+    server.sendMessage(client, response, 1)
     try:
         youtubeTopic = server.getMessage(client)
         searchLink = 'https://www.youtube.com/results?search_query={}'.format(youtubeTopic.replace(" ", "+"))
         htmlPage = urllib.request.urlopen(searchLink)
         video_ids = re.findall(r"watch\?v=(\S{11})", htmlPage.read().decode())
         videoLink = "https://www.youtube.com/watch?v=" + video_ids[0]
-        server.sendMessage(client, response,3)
+        server.sendMessage(client, videoLink,3)
         
     except TimeoutError:
         server.sendMessage(client,"internet connection error occured, try again later",0)
