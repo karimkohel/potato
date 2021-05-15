@@ -7,11 +7,8 @@ import re
 def googleSearch(response):
     webbrowser.open(response)
 
-# def youtubeSearch():
-#     search = server.getMessage(client)
-#     youtubeUrl = ("https://www.youtube.com/results?search_query=")
-#     server.sendMessage(client, response)
-#     webbrowser.open(youtubeUrl + search)
+def youtubeSearch(response):
+    webbrowser.open(response)
 
 # def playMusic(chatObj=None):
     
@@ -30,6 +27,6 @@ def googleSearch(response):
 
 mappings = {
     "2" : googleSearch,
-    # "3" : youtubeSearch,
+    "3" : youtubeSearch,
     # "4":  playMusic
 }
