@@ -20,7 +20,7 @@
 
         {
             "tag": "gratitude",
-            "patterns": ["thank you", "thanks", "thankful for you", "grateful", "appreciate your work", "grateful", "appreciation", "blessing", "praise", "appreciates", "kisses", "credits", "cheers", "merci"],
+            "patterns": ["thank you", "thanks", "thankful for you", "i am grateful", "appreciate your work", "merci"],
             "responses": ["I know you would help me if I needed it. I'm glad to do the same for you", "Anytime! Well, as long as it's convenient for me, that is.", "de rien", "I hope it helps.", "Sure!", "Glad to help", "my pleasure", "don't mention it", "happy I could be of help", "anything for you!", "kisses"]
         },
 
