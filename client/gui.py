@@ -22,6 +22,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.setFixedSize(500, 600)
         MainWindow.setStyleSheet("background-color: rgb(255, 250, 199);")
+        self.MainWindow = MainWindow
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
@@ -85,12 +86,15 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.voiceButton.setText(_translate("MainWindow", "Voice"))
     def startChat(self):
             self.window2 = QtWidgets.QWidget()
-            self.ui = Ui_Form()
+            self.ui = Ui_Form(self.MainWindow)
             self.ui.setupUi(self.window2)
             self.window2.show()
-            MainWindow.hide()
+            self.MainWindow.hide()
 class Ui_Form(object):
-
+    def __init__(self, MainWindow):
+        super().__init__()
+        #self.setupUi(self)
+        self.MainWindow = MainWindow
     def setupUi(self, Form):
         try:
             self.client = ClientSock(socket.gethostbyname(socket.gethostname()),5000, mappings)
@@ -102,6 +106,7 @@ class Ui_Form(object):
         Form.resize(500, 600)
         Form.setFixedSize(500, 600)
         Form.setStyleSheet("background-color: rgb(255, 250, 199);")
+        self.Form = Form
         self.chatBox = QtWidgets.QTextBrowser(Form)
         self.chatBox.setGeometry(QtCore.QRect(20, 20, 461, 511))
         self.chatBox.setStyleSheet("background-color: rgb(250, 255, 228);\n"
@@ -190,8 +195,9 @@ class Ui_Form(object):
 
     def closeButton(self):
         self.client.close()
-        self.parent.show()
-        #Form.close()
+        self.MainWindow.show()
+        self.Form.close()
+        
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
