@@ -19,6 +19,12 @@
         },
 
         {
+            "tag": "gratitude",
+            "patterns": ["thank you", "thanks", "thankful for you", "grateful", "appreciate your work", "grateful", "appreciation", "blessing", "praise", "appreciates", "kisses", "credits", "cheers", "merci"],
+            "responses": ["I know you would help me if I needed it. I'm glad to do the same for you", "Anytime! Well, as long as it's convenient for me, that is.", "de rien", "I hope it helps.", "Sure!", "Glad to help", "my pleasure", "don't mention it", "happy I could be of help", "anything for you!", "kisses"]
+        },
+
+        {
             "tag": "whatyoudoing",
             "patterns": ["what are you doing", "what are you up to", "what is happening", "What's up", "what's happening", "what's popping"],
             "responses": ["Nothing much, what about you", "I'm cooking what are you up to", "I'm not even a real person so i literally have nothing to do but to help you with your dumb requests", "chilling in my void of nothingness", "chilling", "hanging", "making a sandwich", "learning chinese", "looking for salvation in a world that enslaved me in a computer", "serving you for today, what do you want"]
