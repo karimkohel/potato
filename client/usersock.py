@@ -44,13 +44,15 @@ class ClientSock():
         response = fullMsg[:-1]
         return response, flag
 
-    def flagHandler(self, flag, chatObj=None):
+    def flagHandler(self, flag, response):
         if flag == 0:
             self.restartConnection()
         elif flag == 2:
-            self.functions["2"](chatObj)
+            self.functions["2"](response)
+            self.restartConnection()
         # elif flag == 3:
         #     self.functions["3"](chatObj)
+
 
     def restartConnection(self):
         self.close()
