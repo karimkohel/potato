@@ -6,30 +6,30 @@ import re
 import urllib
 
 
-def randomRange(response, server, client):
+def randomRange(response, server, client): #done
     server.sendMessage(client, "till what number should i guess")
     range1 = server.getMessage(client)
     number = random.randint(0, int(range1))
     server.sendMessage(client, response + " " + str(number), 0)
 
-def googleSearch(response,server,client):
+def googleSearch(response,server,client): #done
     server.sendMessage(client, response, 1)
     searchTopic = server.getMessage(client)
     url = "https://www.google.com/search?q=" + searchTopic
     server.sendMessage(client, url, 2)
 
 
-def getDate(response,server, client):
+def getDate(response,server, client): #done
     date = datetime.now()
     dateString = date.strftime(" %A ,%B %d, %Y ")
     server.sendMessage(client, response + " "+ dateString, 0)
 
-def getTime(response,server, client):
-    time = datetime.now()
-    timeString = time.strftime( "%H: %M: %S")
-    server.sendMessage(client, response + " "+ timeString, 0) 
+def getTime(response,server, client): #done
+    time = datetime.now().time()
+    time = time.strftime( "%H: %M: %S")
+    server.sendMessage(client, response + " "+ time,0) 
 
-def youtubeSearch(response,server,client):
+def youtubeSearch(response,server,client): #done
     server.sendMessage(client, response, 1)
     try:
         youtubeTopic = server.getMessage(client)
@@ -44,7 +44,7 @@ def youtubeSearch(response,server,client):
    
    
 
-def getWeather(response, server, client):
+def getWeather(response, server, client): #done
     # Need to put Location instead of cairo
     api = 'http://api.openweathermap.org/data/2.5/weather?q=Cairo&appid=f1e62ab85ff8b2eca979678d57a6de2e&units=metric' 
     try:
@@ -62,5 +62,7 @@ mappings = {
     "random" : randomRange,
     "weather" : getWeather,
     "search" : googleSearch,
-    "youtube " : youtubeSearch
+    "youtube" : youtubeSearch,
+    "time" : getTime,
+    "date" : getDate
 }
