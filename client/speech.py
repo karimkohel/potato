@@ -3,75 +3,67 @@ import pyttsx3 as tts
 import json
 import os
 
-try:
-    with open("settings.json") as f:
-        settings = json.load(f)
-except Exception:
-    settings = {'speech_speed': 170, 'voice_number': 0, 'music_folder': ''}
-    with open('settings.json', 'w') as f:
-            json.dump(settings, f)
+class SpeechPatternRecognizer():
 
-if os.name == "posix" :
-    settings["voice_number"] = 16
+    def __init__(self):
 
-speaker = tts.init()
-voices = speaker.getProperty('voices')
-speaker.setProperty('voice', voices[settings['voice_number']].id)
-speaker.setProperty('rate', settings["speech_speed"])
-
-def speak(text):
-    speaker.say(text)
-    speaker.runAndWait()
-
-def takeCommand():
-    recognizer = sr.Recognizer()
-
-    while True:
+        # getting settings from file or creating it if none 
         try:
-            with sr.Microphone() as mic:
-                recognizer.adjust_for_ambient_noise(mic, duration=0.2)
-                audio = recognizer.listen(mic)
-
-                text = recognizer.recognize_google(audio)
-                text = text.lower()
-
-                return text
-        except sr.UnknownValueError:
-            speak("Sorry I couldn't get that, can you try again?")
+            with open("settings.json") as f:
+                self.settings = json.load(f)
         except Exception:
-            print("error in take command")
-            exit(1)
+            self.settings = {'speech_speed': 170, 'voice_number': 0, 'music_folder': ''}
+            with open('settings.json', 'w') as f:
+                    json.dump(self.settings, f)
 
+        if os.name == "posix" :
+            self.settings["voice_number"] = 16
 
-def waitForWakeupCall(text):
+        # init text to speech engine with specified settings
+        self.speaker = tts.init()
+        voices = speaker.getProperty('voices')
+        self.speaker.setProperty('voice', voices[self.settings['voice_number']].id)
+        self.speaker.setProperty('rate', self.settings["speech_speed"])
 
-    recognizer = sr.Recognizer()
+        # init speech recognizer engine with google
+        self.recognizer = sr.Recognizer()
 
-    while True:
-        try:
-            with sr.Microphone() as mic:
-                recognizer.adjust_for_ambient_noise(mic, duration=0.2)
-                audio = recognizer.listen(mic)
+        def speak(self, text):
+            speaker.say(text)
+            speaker.runAndWait()
 
-                audio = recognizer.recognize_google(audio)
-                audio = audio.lower()
+        def takeCommand(self):
+
+            while True:
+                try:
+                    with sr.Microphone() as mic:
+                        self.recognizer.adjust_for_ambient_noise(mic, duration=0.2)
+                        audio = self.recognizer.listen(mic)
+
+                        text = self.recognizer.recognize_google(audio)
+                        text = text.lower()
+
+                        return text
+                except sr.UnknownValueError:
+                    self.speak("Sorry didn't get that, try again")
+                except Exception:
+                    self.speak("internal speech error")
+
+        def waitForWakeupCall(self, text):
+
+            while True:
+                audio = self.takeCommand()
 
                 if audio.find(text) >= 0:
-                    speak("hey nada")
+                    self.speak("hey there")
                     break
                 else:
                     continue
 
-        except sr.UnknownValueError:
-            continue
-        except Exception:
-            print("error in wait wake up call")
-            exit(1)
-
-def confirmCommand(text = "are you sure you want to confirm your last command"):
-    speak(text)
-    confirmation = takeCommand()
-    if confirmation.find("yes") >= 0:
-        return True
-    else:
-        return False
+        def confirmCommand(self, text = "are you sure you want to confirm your last command"):
+            self.speak(text)
+            confirmation = self.takeCommand()
+            if confirmation.find("yes") >= 0:
+                return True
+            else:
+                return False
