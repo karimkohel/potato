@@ -4,17 +4,8 @@ import urllib
 import re
 
 
-def googleSearch(chatObj=None):
-    if chatObj:
-        search = chatObj[0].toPlainText()
-        chatObj[1].append(f"potato: " + "here you go")
-    else:
-        pass
-        # search = takeCommand()
-        # speak("here you go")
-
-    URl = "https://www.google.com/search?q=" + search
-    webbrowser.open(URl)
+def googleSearch(response):
+    webbrowser.open(response)
 
 # def youtubeSearch():
 #     search = server.getMessage(client)
