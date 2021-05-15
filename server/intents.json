@@ -94,6 +94,12 @@
             "tag": "youtube",
             "patterns": ["get me a video on youtube", "open a video", "I want something to watch", "entertain me", "can you play some music", "play music", "can you play a song", "put on music", "start the music", "play me a song", "i want to hear some music","play video"],
             "responses": ["what should i start for you", "what do you want to play", "ok, I'm in the mood too, what should i start", "what are you looking for", "looking for something specific", "looking to procrastinat are you? what should i start for you"]
+        },
+
+        {
+            "tag": "prayer",
+            "patterns": ["when is the next prayer", "when can i pray", "when is prayer times", "when is it prayer time", "what time is the prayer", "get me prayer times"],
+            "responses": ["next prayer is in", "prayer will be called in", "make sure you are not behind on prayer because next one is in", "prayer will be called in about", "did you finish your prayers, because next prayer is in", "may god bless your soul, next prayer will be in"]
         }
         
     ]
