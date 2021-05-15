@@ -111,7 +111,7 @@ class Ui_Form(object):
         response, flag = self.client.recvMsg()
         self.showResponse(response)
 
-        self.client.flagHandler(flag, (self.typingBox, self.chatBox))
+        self.client.flagHandler(flag, response)
 
     def closeButton(self):
         self.client.close()
