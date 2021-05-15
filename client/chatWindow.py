@@ -81,12 +81,13 @@ class Ui_Form(object):
         self.sendButton.setText(_translate("Start Chat", "Send"))
         self.endButton.setText(_translate("Start Chat", "End Chat"))
 
-    def showResponse(self, response):
+    def showResponse(self, response, flag):
         """
         this is a private helper function to help claen the clickButton method
         takes in server response to show and handle on screen
         """
-        self.chatBox.append(f"potato: " + response)
+        if flag == 0 or flag == 1:
+            self.chatBox.append(f"potato: " + response)
 
     def showInput(self):
         """
@@ -109,7 +110,7 @@ class Ui_Form(object):
         self.client.sendMsg(msg)
 
         response, flag = self.client.recvMsg()
-        self.showResponse(response)
+        self.showResponse(response, flag)
 
         self.client.flagHandler(flag, response)
 
