@@ -105,7 +105,7 @@
         {        
             "tag": "prayer",
             "patterns": ["when is the next prayer", "when can i pray", "when is prayer times", "when is it prayer time", "what time is the prayer", "get me prayer times"],
-            "responses": ["next prayer is in", "prayer will be called in", "make sure you are not behind on prayer because next one is in", "prayer will be called in about", "did you finish your prayers, because next prayer is in", "may god bless your soul, next prayer will be in"]
+            "responses": ["next prayer is", "prayer will be called for", "make sure you are not behind on prayer because next one is", "prayer for", "did you finish your prayers, because next prayer is", "may god bless your soul, next prayer will be"]
         }
         
     ]
