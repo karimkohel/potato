@@ -2,8 +2,8 @@
     "intents" : [
         {
             "tag": "greeting",
-            "patterns": ["hello", "hi there", "hello there", "greetings","good morning", "what's up", "good evening"],
-            "responses": ["Hello!", "Hey!", "Hi there!", "What can i do for you?", "bonjour"]
+            "patterns": ["hello", "hi there", "hello there", "greetings","good morning", "what's up", "good evening", "Heyo", "heyyy", "hiii"],
+            "responses": ["Hello!", "Hey!", "Hi there!", "What can i do for you?", "bonjour", "Well hello"]
         },
 
         {
