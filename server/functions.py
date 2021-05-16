@@ -58,11 +58,31 @@ def getWeather(response, server, client): #done
     except Exception:
         server.sendMessage(client,  " An error occured, try again later", 0)
 
+def downloadMusic(response, server, client):
+    server.sendMessage(client, response, 1)
+
+    try:
+        youtubeTopic = server.getMessage(client)
+        searchLink = 'https://www.youtube.com/results?search_query={}'.format(youtubeTopic.replace(" ", "+"))
+        htmlPage = urllib.request.urlopen(searchLink)
+        video_ids = re.findall(r"watch\?v=(\S{11})", htmlPage.read().decode())
+        videoLink = "https://www.youtube.com/watch?v=" + video_ids[0]
+        server.sendMessage(client,videoLink,4)    
+        
+
+    except TimeoutError:
+        server.sendMessage(client,"internet connection error occured, try again later",0)
+    
+        
+        
+
+    
 mappings = {
     "random" : randomRange,
     "weather" : getWeather,
     "search" : googleSearch,
     "youtube" : youtubeSearch,
     "time" : getTime,
-    "date" : getDate
+    "date" : getDate,
+    "downloadmusic" : downloadMusic
 }
