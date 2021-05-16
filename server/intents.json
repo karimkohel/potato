@@ -113,6 +113,12 @@
             "patterns": ["install music", "download music", "new music", "can you download new music", "get download new music", "need new music", "get me some new music", "get new music"],
             "responses": ["getting you the music you deserve, what do you want", "what should i download", "what is your desired song", "looking for something new, what should i download", "what should i install"]
         },
+
+        {
+            "tag": "calc",
+            "patterns": ["can you calculate something for me", "what is number plus number", "what does this equal", "whats number minus number", "multiplication", "devision"],
+            "responses": ["I am not a glorified calculator", "Calculate things yourself", "I can't calculate things, what did you think i am? a computer?", "let me calulacat for you, oh wait i can't, do it yourself"]
+        },
         
         {        
             "tag": "prayer",
