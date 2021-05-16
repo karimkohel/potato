@@ -18,7 +18,6 @@ def googleSearch(response,server,client): #done
     url = "https://www.google.com/search?q=" + searchTopic
     server.sendMessage(client, url, 2)
 
-
 def getDate(response,server, client): #done
     date = datetime.now()
     dateString = date.strftime(" %A ,%B %d, %Y ")
@@ -38,20 +37,16 @@ def youtubeSearch(response,server,client): #done
         video_ids = re.findall(r"watch\?v=(\S{11})", htmlPage.read().decode())
         videoLink = "https://www.youtube.com/watch?v=" + video_ids[0]
         server.sendMessage(client, videoLink,3)
-        
     except TimeoutError:
         server.sendMessage(client,"internet connection error occured, try again later",0)
    
-
-def getWeather(response, server, client): #done
-    # Need to put Location instead of cairo
+def getWeather(response, server, client):
     api = 'http://api.openweathermap.org/data/2.5/weather?q=Cairo&appid=f1e62ab85ff8b2eca979678d57a6de2e&units=metric' 
     try:
         allData = requests.get(api).json()
         weather = allData['weather'][0]['description']
         temp = allData['main']['temp']
         server.sendMessage(client, response + " " + weather + ", with temperatures around " + str(int(temp)) + " degrees", 0)
-
     except TimeoutError:
         server.sendMessage(client,  " internet connection error occured, try again later", 0)
     except Exception:
@@ -59,7 +54,6 @@ def getWeather(response, server, client): #done
 
 def downloadMusic(response, server, client):
     server.sendMessage(client, response, 1)
-
     try:
         youtubeTopic = server.getMessage(client)
         searchLink = 'https://www.youtube.com/results?search_query={}'.format(youtubeTopic.replace(" ", "+"))
@@ -67,28 +61,19 @@ def downloadMusic(response, server, client):
         video_ids = re.findall(r"watch\?v=(\S{11})", htmlPage.read().decode())
         videoLink = "https://www.youtube.com/watch?v=" + video_ids[0]
         server.sendMessage(client,videoLink,4)    
-        
-
     except TimeoutError:
         server.sendMessage(client,"internet connection error occured, try again later",0)
-    
         
-        
-
-    
 def prayerTime(response, server, client):
     try:
         source = requests.get('https://egypt.timesprayer.com/en/prayer-times-in-cairo.html').text
         soup = BeautifulSoup(source, 'lxml')
         prayer_time = soup.find('div',id='countdown').text
         salah = soup.find('div',class_='info mobile').h3.text
-        server.sendMessage(client,response + " " +salah+" "+prayer_time,0)
+        server.sendMessage(client,response + " " +salah+" ins "+prayer_time,0)
     except TimeoutError:
         server.sendMessage(client,"internet connection error occured, try again later",0)
     
-
-    
-
 
 mappings = {
     "random" : randomRange,
