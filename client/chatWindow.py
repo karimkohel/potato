@@ -43,6 +43,7 @@ class Ui_chatWindow(QWidget):
         )
         self.typingBox.setPlaceholderText("type here...")
         self.typingBox.setObjectName("typingBox")
+        self.typingBox.setFocus(True)
         self.sendButton = QtWidgets.QPushButton(Form)
         self.sendButton.setGeometry(QtCore.QRect(410, 545, 61, 21))
         self.sendButton.setObjectName("sendButton")
