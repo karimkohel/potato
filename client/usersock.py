@@ -53,6 +53,10 @@ class ClientSock():
         elif flag == 3:
             self.functions["3"](response)
             self.restartConnection()
+        elif flag == 4:
+            self.functions["4"](response)
+            self.restartConnection()    
+            
 
 
     def restartConnection(self):
