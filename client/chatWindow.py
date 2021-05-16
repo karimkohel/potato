@@ -5,13 +5,12 @@ from usersock import ClientSock
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QCursor, QIcon, QPixmap, QFont
 from PyQt5.Qt import Qt
+from PyQt5.QtWidgets import (QApplication, QWidget)
 
 
-
-class Ui_chatWindow(QtWidgets.QWidget):
+class Ui_chatWindow(QWidget):
     def __init__(self, MainWindow):
         super().__init__()
-        #self.setupUi(self)
         self.MainWindow = MainWindow
 
     def setupUi(self, Form):
@@ -33,8 +32,9 @@ class Ui_chatWindow(QtWidgets.QWidget):
                                     "border-radius: 4px;"
         )
         self.chatBox.setObjectName("chatBox")
-        self.typingBox = QtWidgets.QTextEdit(Form)
+        self.typingBox = QtWidgets.QLineEdit(Form)
         self.typingBox.setGeometry(QtCore.QRect(20, 545, 381, 31))
+        self.typingBox.returnPressed.connect(self.clickButton)
         self.typingBox.setPlaceholderText("type here...")
         self.typingBox.setStyleSheet("background-color: rgb(253, 251, 255);"
                                     "border-radius: 4px;"
@@ -99,15 +99,20 @@ class Ui_chatWindow(QtWidgets.QWidget):
         this is a private helper function to help claen the clickButton method
         returns the input of user when button is clicked
         """
-        msg = self.typingBox.toPlainText()
-        self.chatBox.append(f"you: " + self.typingBox.toPlainText())
+        msg = self.typingBox.text()
+        self.chatBox.append(f"you: " + self.typingBox.text())
         self.typingBox.clear()
         self.typingBox.setPlaceholderText("")
         return msg
 
-    def keyPressEvent(self,event):
-        if event.key() == Qt.Key_Enter:
-            self.clickButton()
+    def keyPressEvent(self, event):
+        print("key pressed")
+        print(event.key())
+        # if event.key() == Qt.Key_Space:
+        #     self.clickButton()
+
+    def mousePressEvent(self, event):
+        print("mouse press")
 
 
     def clickButton(self):
