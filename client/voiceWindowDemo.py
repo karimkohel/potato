@@ -4,13 +4,14 @@ from client_fx import mappings
 from usersock import ClientSock
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QCursor, QIcon, QPixmap, QFont
-from chatWindow import Ui_chatWindow
 
 class Ui_MainWindow(QtWidgets.QMainWindow):
+
 
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+
 
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -72,6 +73,10 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         self.chatButton.clicked.connect(self.startChat)
 
+        self.startVoice()
+
+
+
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate #converts from ui to py
         MainWindow.setWindowTitle(_translate("MainWindow", "Potato is here.."))
@@ -79,9 +84,13 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.chatButton.setText(_translate("MainWindow", "Chat"))
         self.voiceButton.setText(_translate("MainWindow", "Voice"))
 
+
     def startChat(self):
             self.window2 = QtWidgets.QWidget()
             self.ui = Ui_chatWindow(self.MainWindow)
             self.ui.setupUi(self.window2)
             self.window2.show()
             self.MainWindow.hide()
+
+    def startVoice(self):
+        pass
