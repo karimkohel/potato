@@ -100,6 +100,12 @@
             "tag": "downloadmusic",
             "patterns": ["install music", "download music", "new music", "can you download new music", "get download new music", "need new music", "get me some new music", "get new music"],
             "responses": ["getting you the music you deserve, what do you want", "what should i download", "what is your desired song", "looking for something new, what should i download", "what should i install"]
+        },
+        
+        {        
+            "tag": "prayer",
+            "patterns": ["when is the next prayer", "when can i pray", "when is prayer times", "when is it prayer time", "what time is the prayer", "get me prayer times"],
+            "responses": ["next prayer is in", "prayer will be called in", "make sure you are not behind on prayer because next one is in", "prayer will be called in about", "did you finish your prayers, because next prayer is in", "may god bless your soul, next prayer will be in"]
         }
         
     ]

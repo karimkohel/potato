@@ -4,9 +4,11 @@ from client_fx import mappings
 from usersock import ClientSock
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QCursor, QIcon, QPixmap, QFont
+from PyQt5.Qt import Qt
 
 
-class Ui_chatWindow(object):
+
+class Ui_chatWindow(QtWidgets.QWidget):
     def __init__(self, MainWindow):
         super().__init__()
         #self.setupUi(self)
@@ -68,6 +70,7 @@ class Ui_chatWindow(object):
         )
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
+        
         self.sendButton.clicked.connect(self.clickButton)
         self.endButton.clicked.connect(self.closeButton)
 
@@ -102,6 +105,9 @@ class Ui_chatWindow(object):
         self.typingBox.setPlaceholderText("")
         return msg
 
+    def keyPressEvent(self,event):
+        if event.key() == Qt.Key_Enter:
+            self.clickButton()
 
 
     def clickButton(self):

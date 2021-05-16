@@ -4,7 +4,7 @@ from datetime import datetime
 import requests
 import re
 import urllib
-
+from bs4 import BeautifulSoup
 
 def randomRange(response, server, client): #done
     server.sendMessage(client, "till what number should i guess")
@@ -42,7 +42,6 @@ def youtubeSearch(response,server,client): #done
     except TimeoutError:
         server.sendMessage(client,"internet connection error occured, try again later",0)
    
-   
 
 def getWeather(response, server, client): #done
     # Need to put Location instead of cairo
@@ -77,6 +76,27 @@ def downloadMusic(response, server, client):
         
 
     
+def prayerTime(response, server, client):
+    """ Legacy function """
+    try:
+        source = requests.get('https://egypt.timesprayer.com/en/prayer-times-in-cairo.html').text
+        soup = BeautifulSoup(source, 'lxml')
+        prayer_time = soup.find('div',id='countdown').text
+        salah = soup.find('div',class_='info mobile').h3.text
+    except:
+        try:
+            source = requests.get('https://www.prayer-times.info/en/egypt/cairo/').text
+            soup = BeautifulSoup(source, 'lxml')
+            prayer_time = soup.find('div',id='next_pray').text
+            salah = soup.find('div',id='next_pray').h3.text
+        except:
+            source = None
+    if source == None:
+        server.sendMessage(client, "sorry cannot find prayer time right now. Maybe try again later", 0)
+    else:
+        server.sendMessage(client, "sorry cannot find prayer time right now. Maybe try again later", 0)
+        server.sendMessage(response + " " + prayer_time)
+
 mappings = {
     "random" : randomRange,
     "weather" : getWeather,
@@ -84,5 +104,6 @@ mappings = {
     "youtube" : youtubeSearch,
     "time" : getTime,
     "date" : getDate,
-    "downloadmusic" : downloadMusic
+    "downloadmusic" : downloadMusic,
+    "prayer" : prayerTime
 }
