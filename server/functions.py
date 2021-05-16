@@ -6,29 +6,29 @@ import re
 import urllib
 from bs4 import BeautifulSoup
 
-def randomRange(response, server, client): #done
+def randomRange(response, server, client):
     server.sendMessage(client, "till what number should i guess")
     range1 = server.getMessage(client)
     number = random.randint(0, int(range1))
     server.sendMessage(client, response + " " + str(number), 0)
 
-def googleSearch(response,server,client): #done
+def googleSearch(response,server,client):
     server.sendMessage(client, response, 1)
     searchTopic = server.getMessage(client)
     url = "https://www.google.com/search?q=" + searchTopic
     server.sendMessage(client, url, 2)
 
-def getDate(response,server, client): #done
+def getDate(response,server, client):
     date = datetime.now()
     dateString = date.strftime(" %A ,%B %d, %Y ")
     server.sendMessage(client, response + " "+ dateString, 0)
 
-def getTime(response,server, client): #done
+def getTime(response,server, client):
     time = datetime.now().time()
     time = time.strftime( "%H: %M: %S")
     server.sendMessage(client, response + " "+ time,0) 
 
-def youtubeSearch(response,server,client): #done
+def youtubeSearch(response,server,client):
     server.sendMessage(client, response, 1)
     try:
         youtubeTopic = server.getMessage(client)
@@ -73,7 +73,6 @@ def prayerTime(response, server, client):
         server.sendMessage(client,response + " " +salah+" in "+prayer_time,0)
     except TimeoutError:
         server.sendMessage(client,"internet connection error occured, try again later",0)
-    
 
 mappings = {
     "random" : randomRange,
