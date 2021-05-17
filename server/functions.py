@@ -79,7 +79,14 @@ def startWordProject(response, server, client):
     docName = server.getMessage(client)
     server.sendMessage(client,docName,5)
 
-      
+def higherBrightness(response,server,client): 
+   
+    server.sendMessage(client,response,6)
+
+def lowerBrightness(response,server,client):
+    
+    server.sendMessage(client,response,7)
+
 
 mappings = {
     "random" : randomRange,
@@ -90,5 +97,9 @@ mappings = {
     "date" : getDate,
     "downloadmusic" : downloadMusic,
     "prayer" : prayerTime,
-    "Word" :startWordProject
+    "Word" :startWordProject,
+    "Highbrightness":higherBrightness,
+    "Lowerbrightness" :lowerBrightness
+
+     
 }
