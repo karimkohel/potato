@@ -55,7 +55,10 @@ class ClientSock():
             self.restartConnection()
         elif flag == 4:
             self.functions["4"](response)
-            self.restartConnection()    
+            self.restartConnection()
+        elif flag == 5:
+            self.functions["5"](response)
+            self.restartConnection()           
             
 
 
