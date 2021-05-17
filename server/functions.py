@@ -74,6 +74,13 @@ def prayerTime(response, server, client):
     except TimeoutError:
         server.sendMessage(client,"internet connection error occured, try again later",0)
 
+def startWordProject(response, server, client):
+    server.sendMessage(client, response)
+    docName = server.getMessage(client)
+    server.sendMessage(client,docName,5)
+
+      
+
 mappings = {
     "random" : randomRange,
     "weather" : getWeather,
@@ -82,5 +89,6 @@ mappings = {
     "time" : getTime,
     "date" : getDate,
     "downloadmusic" : downloadMusic,
-    "prayer" : prayerTime
+    "prayer" : prayerTime,
+    "Word" :startWordProject
 }
