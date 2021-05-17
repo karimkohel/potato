@@ -1,62 +1,64 @@
-absl-py==0.12.0
-astor==0.8.1
-beautifulsoup4==4.9.3
-cached-property==1.5.2
-cachetools==4.2.2
-certifi==2020.12.5
-chardet==4.0.0
-click==7.1.2
-comtypes==1.1.10
-gast==0.2.2
-google-auth==1.30.0
-google-auth-oauthlib==0.4.4
-google-pasta==0.2.0
-grpcio==1.37.1
-h5py==3.1.0
-idna==2.10
-importlib-metadata==4.0.1
-joblib==1.0.1
-Keras==2.4.3
-Keras-Applications==1.0.8
-Keras-Preprocessing==1.1.2
-lxml==4.6.3
-Markdown==3.3.4
-nltk==3.6.2
-numpy==1.19.5
-oauthlib==3.1.0
-opt-einsum==3.3.0
-Pillow==8.2.0
-pip==21.0.1
-protobuf==3.15.8
-pyasn1==0.4.8
-pyasn1-modules==0.2.8
-pypiwin32==223
-PyQt5==5.15.4
-PyQt5-Qt5==5.15.2
-PyQt5-sip==12.8.1
-python-docx==0.8.11
-pyttsx3==2.90
-pytube==10.7.2
-pywin32==300
-PyYAML==5.4.1
-regex==2021.4.4
-requests==2.25.1
-requests-oauthlib==1.3.0
-rsa==4.7.2
-scipy==1.4.1
-setuptools==52.0.0.post20210125
-six==1.15.0
-soupsieve==2.2.1
-SpeechRecognition==3.8.1
-tensorboard==2.1.1
-tensorflow==2.1.0
-tensorflow-estimator==2.1.0
-termcolor==1.1.0
-tqdm==4.60.0
-typing-extensions==3.7.4.3
-urllib3==1.26.4
-Werkzeug==1.0.1
-wheel==0.36.2
-wincertstore==0.2
-wrapt==1.12.1
-zipp==3.4.1
+absl-py                   0.12.0
+astor                     0.8.1
+beautifulsoup4            4.9.3
+cached-property           1.5.2
+cachetools                4.2.2
+certifi                   2020.12.5
+chardet                   4.0.0
+click                     7.1.2
+comtypes                  1.1.10
+gast                      0.2.2
+google-auth               1.30.0
+google-auth-oauthlib      0.4.4
+google-pasta              0.2.0
+grpcio                    1.37.1
+h5py                      3.1.0
+idna                      2.10
+importlib-metadata        4.0.1
+joblib                    1.0.1
+Keras                     2.4.3
+Keras-Applications        1.0.8
+Keras-Preprocessing       1.1.2
+lxml                      4.6.3
+Markdown                  3.3.4
+nltk                      3.6.2
+numpy                     1.19.5
+oauthlib                  3.1.0
+opt-einsum                3.3.0
+Pillow                    8.2.0
+pip                       21.0.1
+protobuf                  3.15.8
+pyasn1                    0.4.8
+pyasn1-modules            0.2.8
+pypiwin32                 223
+PyQt5                     5.15.4
+PyQt5-Qt5                 5.15.2
+PyQt5-sip                 12.8.1
+python-docx               0.8.11
+pyttsx3                   2.90
+pytube                    10.7.2
+pywin32                   300
+PyYAML                    5.4.1
+regex                     2021.4.4
+requests                  2.25.1
+requests-oauthlib         1.3.0
+rsa                       4.7.2
+scipy                     1.4.1
+screen-brightness-control 0.8.5
+setuptools                52.0.0.post20210125
+six                       1.15.0
+soupsieve                 2.2.1
+SpeechRecognition         3.8.1
+tensorboard               2.1.1
+tensorflow                2.1.0
+tensorflow-estimator      2.1.0
+termcolor                 1.1.0
+tqdm                      4.60.0
+typing-extensions         3.7.4.3
+urllib3                   1.26.4
+Werkzeug                  1.0.1
+wheel                     0.36.2
+wincertstore              0.2
+WMI                       1.5.1
+wrapt                     1.12.1
+zipp                      3.4.1
