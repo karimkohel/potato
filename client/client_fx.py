@@ -6,6 +6,7 @@ from pytube import YouTube
 import os
 import json
 import docx
+import screen_brightness_control as sbc
 
 def loadSettings():
     try:
@@ -41,10 +42,17 @@ def startWordProject(response):
     doc.save(fileName)
     os.startfile(fileName)
    
+def higherbrightness(response):
+    sbc.set_brightness('+25')
+
+def lowerBrightness(response):
+    sbc.set_brightness('-25')
 
 mappings = {
     "2" : googleSearch,
     "3" : youtubeSearch,
     "4" : downloadMusic,
-    "5" : startWordProject
+    "5" : startWordProject,
+    "6" : higherbrightness,
+    "7" : lowerBrightness
 }
