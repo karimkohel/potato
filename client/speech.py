@@ -17,7 +17,7 @@ class SpeechPatternRecognizer():
                     json.dump(self.settings, f)
 
         if os.name == "posix" :
-            self.settings["voice_number"] = 16
+            self.settings["voice_number"] = 33
 
         # init text to speech engine with specified settings
         self.speaker = tts.init()
@@ -31,6 +31,7 @@ class SpeechPatternRecognizer():
     def speak(self, text):
         self.speaker.say(text)
         self.speaker.runAndWait()
+        
 
     def listen(self, stealthMode = False):
 
@@ -71,3 +72,5 @@ class SpeechPatternRecognizer():
             return True
         else:
             return False
+spr = SpeechPatternRecognizer()
+spr.speak("how can i help you?")
