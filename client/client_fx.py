@@ -5,6 +5,7 @@ import re
 from pytube import YouTube
 import os
 import json
+import docx
 
 def loadSettings():
     try:
@@ -32,8 +33,18 @@ def downloadMusic(response): # handeling the pass but its done
     except Exception:
         pass
 
+def startWordProject(response):
+    docName = response
+    doc = docx.Document()
+    doc.add_paragraph(docName)
+    fileName = os.path.expanduser("D:\AAST") + "\\" + docName + ".docx"
+    doc.save(fileName)
+    os.startfile(fileName)
+   
+
 mappings = {
     "2" : googleSearch,
     "3" : youtubeSearch,
-    "4" : downloadMusic
+    "4" : downloadMusic,
+    "5" : startWordProject
 }
