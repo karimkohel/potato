@@ -129,6 +129,11 @@
             "tag": "Word",
             "patterns": ["start a new project for me", "open word", "lets work on a new assignment", "new assignment", "lets start work", "new homework", "open new word", "start a new report"],
             "responses": ["starting your new assignment word document, what should i name it", "does it have a name that i should now of", "what should i name it", "what should i save it as"]
+        },
+        {
+            "tag": "screenshot",
+            "patterns": ["take screen shot", "save the screen","take a picture for the screen","save the current screen","take a copy from the screen"],
+            "responses": ["okay done", "okay easy", "here it is", "all is fine", "done", "OK but what are you saving it for"]
         }
         
     ]
