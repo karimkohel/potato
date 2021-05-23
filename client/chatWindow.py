@@ -90,7 +90,7 @@ class Ui_chatWindow(QWidget):
         this is a private helper function to help claen the clickButton method
         takes in server response to show and handle on screen
         """
-        if flag == 0 or flag == 1:
+        if flag == 0 or flag == 1 or flag == 6:
             self.chatBox.append(f"potato: " + response)
 
 
