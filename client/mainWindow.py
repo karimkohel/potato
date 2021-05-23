@@ -90,7 +90,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     
     def startVoice(self):
         self.window3 = QtWidgets.QWidget()
-            self.ui = Ui_chatWindow(self.MainWindow)
-            self.ui.setupUi(self.window3)
-            self.window3.show()
-            self.MainWindow.hide()
+        self.ui = Ui_voiceWindow(self.MainWindow)
+        self.ui.setupUi(self.window3)
+        self.window3.show()
+        self.MainWindow.hide()
+        self.ui.voiceChat("Hello!")
+
