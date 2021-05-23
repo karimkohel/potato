@@ -79,7 +79,8 @@ def startWordProject(response, server, client):
     docName = server.getMessage(client)
     server.sendMessage(client,docName,5)
 
-      
+def screenShot(response, server, client):
+    server.sendMessage(client,response,6)
 
 mappings = {
     "random" : randomRange,
@@ -90,5 +91,6 @@ mappings = {
     "date" : getDate,
     "downloadmusic" : downloadMusic,
     "prayer" : prayerTime,
-    "Word" :startWordProject
+    "Word" :startWordProject,
+    "screenshot": screenShot
 }
