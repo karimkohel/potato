@@ -5,6 +5,7 @@ from usersock import ClientSock
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QCursor, QIcon, QPixmap, QFont
 from chatWindow import Ui_chatWindow
+from voiceWindow import Ui_voiceWindow
 
 class Ui_MainWindow(QtWidgets.QMainWindow):
 
@@ -71,6 +72,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         self.chatButton.clicked.connect(self.startChat)
+        self.voiceButton.clicked.connect(self.startVoice)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate #converts from ui to py
@@ -85,3 +87,12 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             self.ui.setupUi(self.window2)
             self.window2.show()
             self.MainWindow.hide()
+    
+    def startVoice(self):
+        self.window3 = QtWidgets.QWidget()
+        self.ui = Ui_voiceWindow(self.MainWindow)
+        self.ui.setupUi(self.window3)
+        self.window3.show()
+        self.MainWindow.hide()
+        self.ui.voiceChat("Hello!")
+

@@ -72,5 +72,4 @@ class SpeechPatternRecognizer():
             return True
         else:
             return False
-spr = SpeechPatternRecognizer()
-spr.speak("how can i help you?")
+

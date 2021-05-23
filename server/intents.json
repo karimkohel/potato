@@ -92,7 +92,7 @@
 
         {
             "tag": "weather",
-            "patterns": ["what temperature is it", "do you have the weather", "what's the temperature", "what's the weather", "how hot is it", "how hot is it", "tell me the weather", "do you know the weather", "whats the weather today"],
+            "patterns": ["what temperature is it", "do you have the weather", "what's the temperature", "what's the weather", "how hot is it", "how hot is it", "tell me the weather", "do you know the weather", "whats the weather today","temprature,please"],
             "responses": ["what a day, its", "your area is expected to be", "today is", "expect", "dress well because today its", "today should be", "its gonna be", "its going to be", "looks like", "today feels like", "it feels like"]
         },
 
@@ -125,15 +125,29 @@
             "patterns": ["when is the next prayer", "when can i pray", "when is prayer times", "when is it prayer time", "what time is the prayer", "get me prayer times"],
             "responses": ["next prayer is", "prayer will be called for", "make sure you are not behind on prayer because next one is", "prayer for", "did you finish your prayers, because next prayer is", "may god bless your soul, next prayer will be"]
         },
+
         {
             "tag": "Word",
             "patterns": ["start a new project for me", "open word", "lets work on a new assignment", "new assignment", "lets start work", "new homework", "open new word", "start a new report"],
             "responses": ["starting your new assignment word document, what should i name it", "does it have a name that i should now of", "what should i name it", "what should i save it as"]
         },
+
         {
             "tag": "screenshot",
             "patterns": ["take screen shot", "save the screen","take a picture for the screen","save the current screen","take a copy from the screen"],
             "responses": ["okay done", "okay easy", "here it is", "all is fine", "done", "OK but what are you saving it for"]
+        },
+
+        {
+            "tag": "Highbrightness",
+            "patterns": ["could you higher brightness","increase brightness","can't see clearly upgrade the brightness","bright screen"],
+            "responses": ["low light,okay","making it clearer for you","what you need is done","here is your screen"]
+        },
+        
+        {
+            "tag": "Lowerbrightness",
+            "patterns": ["lower Brightness","decrease brightness","too much light","lower screen brightness","screen light hurting my eyes"],
+            "responses": ["fading your screen","I think this brightness is good for you","your screen is ready","low light screen as you demand"]
         }
         
     ]

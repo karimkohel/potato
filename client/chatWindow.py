@@ -83,17 +83,13 @@ class Ui_chatWindow(QWidget):
         self.sendButton.setText(_translate("Start Chat", "Send"))
         self.endButton.setText(_translate("Start Chat", "End Chat"))
 
-
-
     def showResponse(self, response, flag):
         """
         this is a private helper function to help claen the clickButton method
         takes in server response to show and handle on screen
         """
-        if flag == 0 or flag == 1 or flag == 6:
+        if flag == 0 or flag == 1 or flag == 6 or flag == 7 or flag == 8:
             self.chatBox.append(f"potato: " + response)
-
-
 
     def showInput(self):
         """
