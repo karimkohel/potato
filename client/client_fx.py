@@ -1,11 +1,11 @@
 #from speech import speak, takeCommand
+#from server.functions import screenShot
 import webbrowser
-import urllib
-import re
 from pytube import YouTube
 import os
 import json
 import docx
+import pyautogui
 
 def loadSettings():
     try:
@@ -40,11 +40,16 @@ def startWordProject(response):
     fileName = os.path.expanduser("D:\AAST") + "\\" + docName + ".docx"
     doc.save(fileName)
     os.startfile(fileName)
-   
+
+def screenShot(response):
+    screenShot= pyautogui.screenshot()
+    screenShot.save("screenshot.png")  
+        
 
 mappings = {
     "2" : googleSearch,
     "3" : youtubeSearch,
     "4" : downloadMusic,
-    "5" : startWordProject
+    "5" : startWordProject,
+    "6" : screenShot
 }
