@@ -5,7 +5,7 @@ from pytube import YouTube
 import os
 import json
 import docx
-import pyautogui
+from pyautogui import screenshot
 import screen_brightness_control as sbc
 
 def loadSettings():
@@ -43,7 +43,7 @@ def startWordProject(response):
     os.startfile(fileName)
 
 def screenShot(response):
-    screenShot= pyautogui.screenshot()
+    screenShot = screenshot()
     screenShot.save("screenshot.png")  
    
 def higherbrightness(response):
