@@ -7,10 +7,14 @@ import urllib
 from bs4 import BeautifulSoup
 
 def randomRange(response, server, client):
-    server.sendMessage(client, "till what number should i guess")
-    range1 = server.getMessage(client)
-    number = random.randint(0, int(range1))
-    server.sendMessage(client, response + " " + str(number), 0)
+    try:
+        server.sendMessage(client, "till what number should i guess")
+        rangeInput = server.getMessage(client)
+        number = random.randint(0, int(rangeInput))
+        server.sendMessage(client, response + " " + str(number), 0)
+    except ValueError:
+        server.sendMessage(client, "Incorrect value you should enter only a number, ask again", 0)
+        
 
 def googleSearch(response, server, client):
     server.sendMessage(client, response, 1)
