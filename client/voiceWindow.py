@@ -7,6 +7,7 @@ from PyQt5.QtGui import QCursor, QIcon, QPixmap, QFont
 from PyQt5.Qt import Qt
 from PyQt5.QtWidgets import (QApplication, QWidget)
 from speech import SpeechPatternRecognizer
+import threading
 
 class Ui_voiceWindow(QWidget):
 
@@ -15,25 +16,12 @@ class Ui_voiceWindow(QWidget):
         self.MainWindow = MainWindow
         self.spr = SpeechPatternRecognizer()
         self.client = ClientSock(socket.gethostbyname(socket.gethostname()),5000, mappings)
+        # make a flag for the voice thread to watch and die when it is flipped
+        self.activeVoice = True
 
-
-    def voiceChat(self, greeting):
-        self.spr.speak(greeting)
-        while True:
-            try:
-                print("entered while loop")
-                self.client.connect()
-                msg = self.spr.listen()
-                self.client.sendMsg(msg)
-                response, flag = self.client.recvMsg()
-                self.spr.speak(response)    
-                self.client.flagHandler(flag, response)
-            except ConnectionRefusedError:
-                print(" - Connection Error: Server didn't connect")
-            if msg == "exit":
-                self.closeButton()
-
-    
+        self.proc = threading.Thread(target=self.handleVoiceControl)
+        self.proc.daemon = True
+        self.proc.start()
 
     def setupUi(self, Form):
         
@@ -65,6 +53,22 @@ class Ui_voiceWindow(QWidget):
         _translate = QtCore.QCoreApplication.translate #converts from ui to py
         self.Form.setWindowTitle(_translate("Voice Chat", "Potato is listening.."))
         self.endButton.setText(_translate("Voice Chat", "Back"))
+
+    def handleVoiceControl(self):
+
+        while True:
+            try:
+                self.client.connect()
+                msg = self.spr.listen()
+                self.client.sendMsg(msg)
+                response, flag = self.client.recvMsg()
+                self.spr.speak(response)    
+                self.client.flagHandler(flag, response)
+                if "exit" in msg:
+                    break
+            except ConnectionRefusedError:
+                print(" - Connection Error: Server didn't connect")
+
 
     def closeButton(self):
         self.client.close()

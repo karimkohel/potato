@@ -94,5 +94,3 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.ui.setupUi(self.window3)
         self.window3.show()
         self.MainWindow.hide()
-        self.ui.voiceChat("Hello!")
-
