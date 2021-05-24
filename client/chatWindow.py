@@ -104,6 +104,7 @@ class Ui_chatWindow(QWidget):
 
     def clickButton(self):
 
+        self.client.connect()
         self.chatBox.setStyleSheet("font:  75 italic 16pt 'Optima';"
                                     "color: 'red';"
         )

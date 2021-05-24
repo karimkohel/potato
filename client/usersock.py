@@ -46,34 +46,28 @@ class ClientSock():
 
     def flagHandler(self, flag, response):
         if flag == 0:
-            self.restartConnection()
+            self.close()
         elif flag == 2:
             self.functions["2"](response)
-            self.restartConnection()
+            self.close()
         elif flag == 3:
             self.functions["3"](response)
-            self.restartConnection()
+            self.close()
         elif flag == 4:
             self.functions["4"](response)
-            self.restartConnection()
+            self.close()
         elif flag == 5:
             self.functions["5"](response)
-            self.restartConnection() 
+            self.close() 
         elif flag == 6:
             self.functions["6"](response)
-            self.restartConnection() 
+            self.close() 
         elif flag == 7:
             self.functions["7"](response)
-            self.restartConnection()                   
+            self.close()                   
         elif flag == 8:
             self.functions["8"](response)
-            self.restartConnection()           
-            
-
-
-    def restartConnection(self):
-        self.close()
-        self.connect()
+            self.close()           
         
     def close(self):
         self.clientSocket.close()
