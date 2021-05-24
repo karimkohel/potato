@@ -128,7 +128,7 @@
 
         {
             "tag": "Word",
-            "patterns": ["start a new project for me", "open word", "lets work on a new assignment", "new assignment", "lets start work", "new homework", "open new word", "start a new report"],
+            "patterns": ["start a new project for me", "open word", "lets work on a new assignment", "new assignment", "lets start work", "new homework", "open new word", "start a new report", "make report"],
             "responses": ["starting your new assignment word document, what should i name it", "does it have a name that i should now of", "what should i name it", "what should i save it as"]
         },
 
@@ -140,13 +140,13 @@
 
         {
             "tag": "Highbrightness",
-            "patterns": ["could you higher brightness","increase brightness","can't see clearly upgrade the brightness","bright screen"],
-            "responses": ["low light,okay","making it clearer for you","what you need is done","here is your screen"]
+            "patterns": ["could you higher brightness", "increase brightness", "can't see clearly upgrade the brightness", "bright screen", "higher brightness", "increase screen light"],
+            "responses": ["low light,okay","making it clearer for you","what you need is done","here is your screen", "don't your eyes hurt?"]
         },
         
         {
             "tag": "Lowerbrightness",
-            "patterns": ["lower Brightness","decrease brightness","too much light","lower screen brightness","screen light hurting my eyes"],
+            "patterns": ["lower Brightness","decrease brightness","too much light","lower screen brightness","screen light hurting my eyes", "lower screen brightness", "lower screen light"],
             "responses": ["fading your screen","I think this brightness is good for you","your screen is ready","low light screen as you demand"]
         }
         
