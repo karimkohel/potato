@@ -12,23 +12,23 @@ def randomRange(response, server, client):
     number = random.randint(0, int(range1))
     server.sendMessage(client, response + " " + str(number), 0)
 
-def googleSearch(response,server,client):
+def googleSearch(response, server, client):
     server.sendMessage(client, response, 1)
     searchTopic = server.getMessage(client)
     url = "https://www.google.com/search?q=" + searchTopic
     server.sendMessage(client, url, 2)
 
-def getDate(response,server, client):
+def getDate(response, server, client):
     date = datetime.now()
     dateString = date.strftime(" %A ,%B %d, %Y ")
     server.sendMessage(client, response + " "+ dateString, 0)
 
-def getTime(response,server, client):
+def getTime(response, server, client):
     time = datetime.now().time()
     time = time.strftime( "%H: %M: %S")
     server.sendMessage(client, response + " "+ time,0) 
 
-def youtubeSearch(response,server,client):
+def youtubeSearch(response, server, client):
     server.sendMessage(client, response, 1)
     try:
         youtubeTopic = server.getMessage(client)
@@ -82,7 +82,7 @@ def startWordProject(response, server, client):
 def higherBrightness(response,server,client): 
     server.sendMessage(client,response,8)
 
-def lowerBrightness(response,server,client):
+def lowerBrightness(response, server, client):
     server.sendMessage(client,response,7)
 
 def screenShot(response, server, client):
@@ -98,7 +98,7 @@ mappings = {
     "downloadmusic" : downloadMusic,
     "prayer" : prayerTime,
     "Word" : startWordProject,
-    "screenshot" : screenShot,
     "Highbrightness" : higherBrightness,
-    "Lowerbrightness" : lowerBrightness
+    "Lowerbrightness" : lowerBrightness,
+    "screenshot" : screenShot,
 }
