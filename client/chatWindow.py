@@ -102,16 +102,6 @@ class Ui_chatWindow(QWidget):
         self.typingBox.setPlaceholderText("")
         return msg
 
-    def keyPressEvent(self, event):
-        print("key pressed")
-        print(event.key())
-        # if event.key() == Qt.Key_Space:
-        #     self.clickButton()
-
-    def mousePressEvent(self, event):
-        print("mouse press")
-
-
     def clickButton(self):
 
         self.chatBox.setStyleSheet("font:  75 italic 16pt 'Optima';"
