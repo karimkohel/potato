@@ -66,7 +66,7 @@ class ClientSock():
             self.functions["7"](response)
             self.restartConnection()                   
         elif flag == 8:
-            self.functions["6"](response)
+            self.functions["8"](response)
             self.restartConnection()           
             
 
