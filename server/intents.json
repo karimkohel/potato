@@ -141,7 +141,7 @@
         {
             "tag": "Highbrightness",
             "patterns": ["could you higher brightness", "increase brightness", "can't see clearly upgrade the brightness", "bright screen", "higher brightness", "increase screen light"],
-            "responses": ["low light,okay","making it clearer for you","what you need is done","here is your screen", "don't your eyes hurt?"]
+            "responses": ["was it low light, okay","making it clearer for you","what you need is done","here is your screen", "don't your eyes hurt?"]
         },
         
         {
