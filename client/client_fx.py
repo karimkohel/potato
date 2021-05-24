@@ -1,5 +1,3 @@
-#from speech import speak, takeCommand
-#from server.functions import screenShot
 import webbrowser
 from pytube import YouTube
 import os
