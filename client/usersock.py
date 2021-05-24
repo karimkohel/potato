@@ -47,27 +47,15 @@ class ClientSock():
     def flagHandler(self, flag, response):
         if flag == 0:
             self.close()
-        elif flag == 2:
-            self.functions["2"](response)
+        elif flag == 1:
+            pass
+        elif flag >= 2 or flag <= 8:
+            self.functions[str(flag)](response)
             self.close()
-        elif flag == 3:
-            self.functions["3"](response)
-            self.close()
-        elif flag == 4:
-            self.functions["4"](response)
-            self.close()
-        elif flag == 5:
-            self.functions["5"](response)
-            self.close() 
-        elif flag == 6:
-            self.functions["6"](response)
-            self.close() 
-        elif flag == 7:
-            self.functions["7"](response)
-            self.close()                   
-        elif flag == 8:
-            self.functions["8"](response)
-            self.close()           
+        elif flag == 9:
+            return True
+        else:
+            print("usersockets class : unknown flag in flag handler: ", flag)
         
     def close(self):
         self.clientSocket.close()

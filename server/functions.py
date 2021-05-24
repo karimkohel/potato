@@ -52,9 +52,9 @@ def getWeather(response, server, client):
         temp = allData['main']['temp']
         server.sendMessage(client, response + " " + weather + ", with temperatures around " + str(int(temp)) + " degrees", 0)
     except TimeoutError:
-        server.sendMessage(client,  " internet connection error occured, try again later", 0)
+        server.sendMessage(client,  "internet connection error occured, try again later", 0)
     except Exception:
-        server.sendMessage(client,  " An error occured, try again later", 0)
+        server.sendMessage(client,  "An error occured, try again later", 0)
 
 def downloadMusic(response, server, client):
     server.sendMessage(client, response, 1)
@@ -64,33 +64,36 @@ def downloadMusic(response, server, client):
         htmlPage = urllib.request.urlopen(searchLink)
         video_ids = re.findall(r"watch\?v=(\S{11})", htmlPage.read().decode())
         videoLink = "https://www.youtube.com/watch?v=" + video_ids[0]
-        server.sendMessage(client,videoLink,4)    
+        server.sendMessage(client, videoLink, 4)    
     except TimeoutError:
-        server.sendMessage(client,"internet connection error occured, try again later",0)
+        server.sendMessage(client, "internet connection error occured, try again later",0)
         
 def prayerTime(response, server, client):
     try:
         source = requests.get('https://egypt.timesprayer.com/en/prayer-times-in-cairo.html').text
         soup = BeautifulSoup(source, 'lxml')
-        prayer_time = soup.find('div',id='countdown').text
-        salah = soup.find('div',class_='info mobile').h3.text
-        server.sendMessage(client,response + " " +salah+" in "+prayer_time,0)
+        prayer_time = soup.find('div', id='countdown').text
+        salah = soup.find('div', class_='info mobile').h3.text
+        server.sendMessage(client, response + " " +salah+" in "+prayer_time, 0)
     except TimeoutError:
-        server.sendMessage(client,"internet connection error occured, try again later",0)
+        server.sendMessage(client, "internet connection error occured, try again later", 0)
 
 def startWordProject(response, server, client):
     server.sendMessage(client, response)
     docName = server.getMessage(client)
-    server.sendMessage(client,docName,5)
-
-def higherBrightness(response,server,client): 
-    server.sendMessage(client,response,8)
-
-def lowerBrightness(response, server, client):
-    server.sendMessage(client,response,7)
+    server.sendMessage(client, docName, 5)
 
 def screenShot(response, server, client):
-    server.sendMessage(client,response,6)
+    server.sendMessage(client, response, 6)
+
+def lowerBrightness(response, server, client):
+    server.sendMessage(client, response, 7)
+
+def higherBrightness(response, server,client): 
+    server.sendMessage(client, response, 8)
+
+def goodBye(response, server, client):
+    server.sendMessage(client, response, 9)
 
 mappings = {
     "random" : randomRange,
@@ -105,4 +108,5 @@ mappings = {
     "Highbrightness" : higherBrightness,
     "Lowerbrightness" : lowerBrightness,
     "screenshot" : screenShot,
+    "goodbye" : goodBye
 }

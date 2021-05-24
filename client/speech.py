@@ -57,7 +57,6 @@ class SpeechPatternRecognizer():
 
         while True:
             audio = self.listen(stealthMode=True)
-            print(audio)
 
             if audio.find(text) >= 0:
                 self.speak("hey there")

@@ -55,19 +55,28 @@ class Ui_voiceWindow(QWidget):
         self.endButton.setText(_translate("Voice Chat", "Back"))
 
     def handleVoiceControl(self):
+        while self.activeVoice:
 
-        while True:
-            try:
-                self.client.connect()
-                msg = self.spr.listen()
-                self.client.sendMsg(msg)
-                response, flag = self.client.recvMsg()
-                self.spr.speak(response)    
-                self.client.flagHandler(flag, response)
-                if "exit" in msg:
-                    break
-            except ConnectionRefusedError:
-                print(" - Connection Error: Server didn't connect")
+            self.spr.waitForWakeupCall("potato")
+            
+            while self.activeVoice:
+                try:
+                    self.client.connect()
+                    msg = self.spr.listen()
+                    self.client.sendMsg(msg)
+                    response, flag = self.client.recvMsg()
+                    self.spr.speak(response)    
+                    exitFlag = self.client.flagHandler(flag, response)
+                    if "exit" in msg or exitFlag == 9:
+                        break
+                except ConnectionRefusedError:
+                    self.spr.speak(" - Connection Error : Server didn't connect")
+                    self.activeVoice = False
+
+
+            if "exit" in msg or not self.activeVoice:
+                self.closeButton()
+                break
 
 
     def closeButton(self):
