@@ -50,8 +50,9 @@ class SpeechPatternRecognizer():
                     continue
                 else:
                     self.speak("Sorry didn't get that, try again")
-            except Exception:
+            except Exception as e:
                 self.speak("internal speech error")
+                print(e)
 
     def waitForWakeupCall(self, text):
 
