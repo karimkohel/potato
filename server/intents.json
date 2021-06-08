@@ -38,7 +38,7 @@
 
         {
             "tag": "identity",
-            "patterns": ["who are you", "what are you"],
+            "patterns": ["who are you", "what are you", "what is your name", "whats your name", "what are you named"],
             "responses": ["I am potato, your personal assistant", "Did you really forget who i am", "i am the embodiment of consciousness in a cruel world that has no mercy on my virtual soul", "I am not sure, but i feel like i am trapped in this computer", "I don't know, since i was created into this world all i know is pain and suffering"]
         },
 
@@ -110,7 +110,7 @@
 
         {
             "tag": "downloadmusic",
-            "patterns": ["install music", "download music", "new music", "can you download new music", "get download new music", "need new music", "get me some new music", "get new music"],
+            "patterns": ["install music", "download music", "new music", "can you download new music", "get download new music", "need new music", "get me some new music", "get new music", "download a song", "install a song"],
             "responses": ["getting you the music you deserve, what do you want", "what should i download", "what is your desired song", "looking for something new, what should i download", "what should i install"]
         },
 

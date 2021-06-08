@@ -74,7 +74,8 @@ def prayerTime(response, server, client):
         soup = BeautifulSoup(source, 'lxml')
         prayer_time = soup.find('div', id='countdown').text
         salah = soup.find('div', class_='info mobile').h3.text
-        server.sendMessage(client, response + " " +salah+" in "+prayer_time, 0)
+        salah = salah.split(' ')
+        server.sendMessage(client, response + " " +salah[2]+" in "+prayer_time, 0)
     except TimeoutError:
         server.sendMessage(client, "internet connection error occured, try again later", 0)
 
