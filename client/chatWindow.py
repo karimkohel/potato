@@ -114,7 +114,8 @@ class Ui_chatWindow(QWidget):
         response, flag = self.client.recvMsg()
         self.showResponse(response, flag)
 
-        self.client.flagHandler(flag, response)
+        if self.client.flagHandler(flag, response):
+            self.closeButton()
 
 
     def closeButton(self):

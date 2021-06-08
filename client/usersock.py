@@ -50,7 +50,7 @@ class ClientSock():
             self.connect()
         elif flag == 1:
             pass
-        elif flag >= 2 or flag <= 8:
+        elif flag >= 2 and flag <= 8:
             self.functions[str(flag)](response)
             self.close()
             self.connect()
