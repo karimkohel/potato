@@ -58,14 +58,15 @@ class Ui_voiceWindow(QWidget):
         while self.activeVoice:
 
             self.spr.waitForWakeupCall("potato")
+            self.client.connect()
             
             while self.activeVoice:
                 try:
-                    self.client.connect()
                     msg = self.spr.listen()
                     self.client.sendMsg(msg)
                     response, flag = self.client.recvMsg()
-                    self.spr.speak(response)    
+                    if flag == 0 or flag == 1 or flag == 6 or flag == 7 or flag == 8:
+                        self.spr.speak(response)    
                     exitFlag = self.client.flagHandler(flag, response)
                     if "exit" in msg or exitFlag == 9:
                         break
