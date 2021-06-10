@@ -8,6 +8,7 @@ from PyQt5.Qt import Qt
 from PyQt5.QtWidgets import (QApplication, QWidget)
 from speech import SpeechPatternRecognizer
 import threading
+from time import sleep
 
 class Ui_voiceWindow(QWidget):
 
@@ -71,6 +72,7 @@ class Ui_voiceWindow(QWidget):
                     if "exit" in msg or exitFlag == 9:
                         break
                 except ConnectionRefusedError:
+                    sleep(1)
                     self.spr.speak(" - Connection Error : Server didn't connect")
                     self.activeVoice = False
 
@@ -79,8 +81,11 @@ class Ui_voiceWindow(QWidget):
                 self.closeButton()
                 break
 
-
     def closeButton(self):
-        self.client.close()
+        self.activeVoice = False
+        try:
+            self.client.close()
+        except Exception as e:
+            print(e, '\n', "close voice window error")
         self.MainWindow.show()
         self.Form.close()
