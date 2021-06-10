@@ -36,7 +36,7 @@ def startWordProject(response):
     docName = response
     doc = docx.Document()
     doc.add_paragraph(docName)
-    fileName = os.path.expanduser("D:\AAST") + "\\" + docName + ".docx"
+    fileName = docName + ".docx"
     doc.save(fileName)
     os.startfile(fileName)
 
