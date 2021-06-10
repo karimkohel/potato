@@ -66,10 +66,10 @@ class Ui_voiceWindow(QWidget):
                     msg = self.spr.listen()
                     self.client.sendMsg(msg)
                     response, flag = self.client.recvMsg()
-                    if flag == 0 or flag == 1 or flag == 6 or flag == 7 or flag == 8:
+                    if flag == 0 or flag == 1 or flag == 6 or flag == 7 or flag == 8 or flag == 9:
                         self.spr.speak(response)    
                     exitFlag = self.client.flagHandler(flag, response)
-                    if "exit" in msg or exitFlag == 9:
+                    if "exit" in msg or flag == 9:
                         break
                 except ConnectionRefusedError:
                     sleep(1)
