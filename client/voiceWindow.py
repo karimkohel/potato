@@ -78,9 +78,9 @@ class Ui_voiceWindow(QWidget):
 
 
             if "exit" in msg or not self.activeVoice:
-                self.closeButton()
                 break
 
+        self.closeButton()
     def closeButton(self):
         self.activeVoice = False
         try:
