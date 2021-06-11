@@ -1,5 +1,4 @@
 import random
-import webbrowser
 from datetime import datetime
 import requests
 import re
