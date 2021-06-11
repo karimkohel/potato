@@ -26,7 +26,6 @@ def youtubeSearch(response):
 
 def downloadMusic(response):
     video = YouTube(response)
-    print(response)
     audio = video.streams.filter(only_audio=True).first()
     musicPath = os.getcwd()
     try:
