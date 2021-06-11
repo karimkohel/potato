@@ -57,7 +57,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(170, 340, 151, 141))
         self.label_2.setText("")
-        self.label_2.setPixmap(QtGui.QPixmap("kiss-01.png"))
+        self.label_2.setPixmap(QtGui.QPixmap("welcomePotato-01.png"))
         self.label_2.setScaledContents(True)
         self.label_2.setObjectName("label_2")
         MainWindow.setCentralWidget(self.centralwidget)

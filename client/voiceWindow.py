@@ -2,6 +2,7 @@ import sys, os
 import socket
 from client_fx import mappings
 from usersock import ClientSock
+from PyQt5.QtWidgets import *
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QCursor, QIcon, QPixmap, QFont
 from PyQt5.Qt import Qt
@@ -31,6 +32,13 @@ class Ui_voiceWindow(QWidget):
         Form.setFixedSize(500, 600)
         Form.setStyleSheet("background-color: rgb(255, 250, 199);")
         self.Form = Form
+        self.label_2 = QtWidgets.QLabel(Form)
+        self.label_2.setGeometry(QtCore.QRect(170, 270, 151, 141))
+        self.label_2.setText("")
+        self.label_2.setPixmap(QtGui.QPixmap("kiss-01.png"))
+        self.label_2.setScaledContents(True)
+        self.label_2.setObjectName("label_2")
+
         
         self.endButton = QtWidgets.QPushButton(Form)
         self.endButton.setGeometry(QtCore.QRect(410, 570, 61, 21))
