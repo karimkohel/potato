@@ -17,7 +17,7 @@ class Ui_voiceWindow(QWidget):
         super().__init__()
         self.MainWindow = MainWindow
         self.spr = SpeechPatternRecognizer()
-        self.client = ClientSock(socket.gethostbyname(socket.gethostname()),5000, mappings)
+        self.client = ClientSock("172.104.141.41",5000, mappings)
         # make a flag for the voice thread to watch and die when it is flipped
         self.activeVoice = True
 

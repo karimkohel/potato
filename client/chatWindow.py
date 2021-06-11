@@ -18,7 +18,7 @@ class Ui_chatWindow(QWidget):
 
     def setupUi(self, Form):
         try:
-            self.client = ClientSock(socket.gethostbyname(socket.gethostname()),5000, mappings)
+            self.client = ClientSock("172.104.141.41",5000, mappings)
             self.client.connect()
         except ConnectionRefusedError:
             print(" - Connection Error: Server didn't connect")
