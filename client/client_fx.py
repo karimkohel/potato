@@ -26,9 +26,8 @@ def youtubeSearch(response):
 
 def downloadMusic(response):
     video = YouTube(response)
-    print(response)
     audio = video.streams.filter(only_audio=True).first()
-    musicPath = os.getcwd()
+    musicPath = os.path.join(os.path.join(os.environ['USERPROFILE']), 'Desktop')
     try:
         audio.download(musicPath)
     except Exception:
