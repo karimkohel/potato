@@ -1,5 +1,6 @@
 import sys, os
 import socket
+from unicodedata import name
 from client_fx import mappings
 from usersock import ClientSock
 from PyQt5 import QtCore, QtGui, QtWidgets
@@ -9,6 +10,8 @@ from PyQt5.QtWidgets import (QApplication, QWidget)
 
 
 class Ui_chatWindow(QWidget):
+    
+
     def __init__(self, MainWindow):
         super().__init__()
         self.MainWindow = MainWindow
@@ -31,6 +34,8 @@ class Ui_chatWindow(QWidget):
                                     "background-color: rgb(255, 249, 239);"
                                     "border-radius: 4px;"
         )
+
+        
         self.chatBox.setObjectName("chatBox")
         self.typingBox = QtWidgets.QLineEdit(Form)
         self.typingBox.setGeometry(QtCore.QRect(20, 545, 381, 31))
@@ -89,7 +94,7 @@ class Ui_chatWindow(QWidget):
         takes in server response to show and handle on screen
         """
         if flag == 0 or flag == 1 or flag == 6 or flag == 7 or flag == 8:
-            self.chatBox.append(f"potato: " + response)
+            self.chatBox.append(f'<font color="orange"> <i> Potato: </i></font><font color="black"> {response}</font>')
 
     def showInput(self):
         """
@@ -97,14 +102,14 @@ class Ui_chatWindow(QWidget):
         returns the input of user when button is clicked
         """
         msg = self.typingBox.text()
-        self.chatBox.append(f"you: " + self.typingBox.text())
+        self.chatBox.append(f'<font color="blue"> <i> You: </i></font><font color="black"> {msg}</font>')
         self.typingBox.clear()
         self.typingBox.setPlaceholderText("")
         return msg
 
     def clickButton(self):
 
-        self.chatBox.setStyleSheet("font:  75 italic 16pt 'Optima';"
+        self.chatBox.setStyleSheet("font:  75 16pt 'Optima';"
                                     "color: 'red';"
         )
 
