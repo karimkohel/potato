@@ -8,6 +8,7 @@ class ClientSock():
         self.PORT = port
         self.IP = ip
         self.functions = functions
+        self.clientSocket = None
 
     def connect(self):
         self.clientSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

@@ -91,9 +91,9 @@ class Ui_voiceWindow(QWidget):
         self.closeButton()
     def closeButton(self):
         self.activeVoice = False
-        try:
+        
+        if self.client.clientSocket:
             self.client.close()
-        except Exception as e:
-            print(e, '\n', "close voice window error")
+
         self.MainWindow.show()
         self.Form.close()
