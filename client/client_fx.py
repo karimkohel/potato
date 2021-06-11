@@ -24,10 +24,10 @@ def googleSearch(response):
 def youtubeSearch(response):
     webbrowser.open(response)
 
-def downloadMusic(response): # handeling the pass but its done
-    video = YouTube(response)
-    audio = video.streams.last()
-    musicPath = os.path.expanduser("~/Desktop")
+def downloadMusic(response):
+    print(response)
+    audio = video.streams.filter(only_audio=True).first()
+    musicPath = os.getcwd()
     try:
         audio.download(musicPath)
     except Exception:
