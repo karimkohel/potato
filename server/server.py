@@ -6,9 +6,9 @@ from functions import mappings
 
 
 bot = neuralintents.GenericAssistant("server/intents.json", mappings, "model")
-bot.train_model()
-bot.save_model()
-# bot.load_model()
+# bot.train_model()
+# bot.save_model()
+bot.load_model()
 
 serverObj =  ServerSock(socket.gethostbyname(socket.gethostname()), 5000, bot)
 
