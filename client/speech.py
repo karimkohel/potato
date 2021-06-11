@@ -38,7 +38,7 @@ class SpeechPatternRecognizer():
         while True:
             try:
                 with sr.Microphone() as mic:
-                    self.recognizer.adjust_for_ambient_noise(mic, duration=0.2)
+                    self.recognizer.adjust_for_ambient_noise(mic)
                     audio = self.recognizer.listen(mic)
 
                     text = self.recognizer.recognize_google(audio)
