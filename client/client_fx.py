@@ -4,7 +4,8 @@ import os
 import json
 import docx
 from pyautogui import screenshot
-import screen_brightness_control as sbc
+if os.name != "posix" :
+    import screen_brightness_control as sbc
 
 def loadSettings():
     try:
@@ -45,10 +46,12 @@ def screenShot(response):
     screenShot.save("screenshot.png")  
    
 def higherbrightness(response):
-    sbc.set_brightness('+25')
+    if os.name != "posix" :
+        sbc.set_brightness('+25')
 
 def lowerBrightness(response):
-    sbc.set_brightness('-25')
+    if os.name != "posix" :
+        sbc.set_brightness('-25')
 
 mappings = {
     "2" : googleSearch,
