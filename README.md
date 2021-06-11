@@ -1,5 +1,31 @@
-# potato
+# Potato
 A  beuatiful AI assistant to help students with their uni life that is centralized on a server somewhere
+
+## What can it do
+Potato is mainly an assistant that would help you use your computer with voice command with functionality as but not limited to:
+
+ - opening up search windows with your default browser
+ - play or download whatever music you desire
+ - answer random questions like what time is it or when is the next prayer
+ - chat with you about random topics 
+ - control your screen brightness
+ - open up an new word document for your next report
+ - roll a die or toss a coin
+ - take a screen shot of your computer
+
+## How to use potato
+Potato has 2 main windows, the voice and text chat windows and it will have full functionality in both modes.
+
+#### Text with potato
+to text with potato you have to choose the text page and you can start texting right away.
+
+#### Voice chat with potato
+to use voice chat just open the voice window and minimize potato so that it is listining in the background and waiting for you to start chatting by saying `hey potato`.
+
+you can start chatting with potato while it is in the background without clicking on it, asking what you need and then sending it away is as easy as calling it with `go away` so it goes back to the background awaiting your next call.
+
+to close potato completely using voice command you can use keyword `exit` in any context and potato will exit entirely.
+
 
 ### How to start developement
  - clone the repo by opening gitbash in the desired folder and running the command 
