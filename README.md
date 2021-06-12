@@ -59,7 +59,7 @@ client app will use a gui and a text to speach engine/speach recognition engine 
 
 |Code |Def  |
 | --- | --- |
-|0CXXX|Client Error|
-|0CVXX|Voice Error |
-|0CCXX|Chat Error |
-|0SXXX|Server Error|
+|0CXXXX|Client Error|
+|0CVXXX|Voice Error |
+|0CCXXX|Chat Error |
+|0SXXXX|Server Error|
