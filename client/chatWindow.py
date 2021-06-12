@@ -35,7 +35,7 @@ class Ui_chatWindow(QWidget):
                                     "border-radius: 4px;"
         )
         ## moved this from inside the send button to here
-        self.chatBox.setStyleSheet("font:  75 16pt 'Optima';"
+        self.chatBox.setStyleSheet("font:  75 16pt 'Optima';" + 
                                     "color: 'red';"
         )
         ##
@@ -114,15 +114,15 @@ class Ui_chatWindow(QWidget):
 
     def clickButton(self):
 
+        if self.typingBox.text():
+            msg = self.showInput()
+            self.client.sendMsg(msg)
 
-        msg = self.showInput()
-        self.client.sendMsg(msg)
+            response, flag = self.client.recvMsg()
+            self.showResponse(response, flag)
 
-        response, flag = self.client.recvMsg()
-        self.showResponse(response, flag)
-
-        if self.client.flagHandler(flag, response):
-            self.closeButton()
+            if self.client.flagHandler(flag, response):
+                self.closeButton()
 
 
     def closeButton(self):
