@@ -53,3 +53,13 @@ the server script will host the main logic and body of the project with the sock
 
 #### client app
 client app will use a gui and a text to speach engine/speach recognition engine to recieve and output the speach to users that is fetched from server script over a socket
+
+
+### ERROR CODES:
+
+|Code |Def  |
+| --- | --- |
+|0CXXXX|Client Error|
+|0CVXXX|Voice Error |
+|0CCXXX|Chat Error |
+|0SXXXX|Server Error|
