@@ -1,9 +1,8 @@
 from client_fx import mappings
 from usersock import ClientSock
-from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtGui import QCursor, QIcon, QPixmap, QFont
-from PyQt5.Qt import Qt
-from PyQt5.QtWidgets import (QApplication, QWidget)
+from PyQt5 import QtCore, QtWidgets
+from PyQt5.QtGui import QCursor
+from PyQt5.QtWidgets import QWidget
 
 
 class Ui_chatWindow(QWidget):
@@ -15,9 +14,6 @@ class Ui_chatWindow(QWidget):
 
     def setupUi(self, Form):
        
-            
-                
-
         Form.setObjectName("Start Chat")
         Form.resize(500, 600)
         Form.setFixedSize(500, 600)
@@ -29,12 +25,9 @@ class Ui_chatWindow(QWidget):
                                     "background-color: rgb(255, 249, 239);"
                                     "border-radius: 4px;"
         )
-        ## moved this from inside the send button to here
         self.chatBox.setStyleSheet("font:  75 16pt 'Optima';" + 
                                     "color: 'red';"
         )
-        ##
-
         
         self.chatBox.setObjectName("chatBox")
         self.typingBox = QtWidgets.QLineEdit(Form)
@@ -89,8 +82,6 @@ class Ui_chatWindow(QWidget):
         self.endButton.clicked.connect(self.closeButton)
 
         
-
-
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate

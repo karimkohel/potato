@@ -60,7 +60,7 @@ class Ui_voiceWindow(QWidget):
         self.endButton.setText(_translate("Voice Chat", "Back"))
 
     def handleVoiceControl(self):
-        msg = " "
+        msg = ""
         while self.activeVoice:
 
             self.spr.waitForWakeupCall("potato")
