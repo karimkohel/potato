@@ -68,19 +68,19 @@
 
         {
             "tag": "date",
-            "patterns": ["what day are we today?", "What's the day", "Tell me the date", "Date, please!", "Which day are"],
-            "responses": ["Its", " anyway its", "Are you late for something? because its", "Today is", "it should be", "According to the calender its", "wait i'll check, yeah its", ""]
+            "patterns": ["what day are we today?", "What's the day", "Tell me the date", "Date, please!", "Which day are", "what is today"],
+            "responses": ["Its", " anyway its", "Are you late for something? because its", "Today is", "It should be", "According to the calender its", "Wait i'll check, yeah its", ""]
         },
 
         {
             "tag": "jokes",
-            "patterns": ["tell me a joke", "are you funny", "can you tell jokes", "i love jokes", "can you tell a funny joke", "funny joke", "do you have jokes"],
+            "patterns": ["tell me a joke", "are you funny", "can you tell jokes", "i love jokes", "can you tell a funny joke", "funny joke", "do you have jokes", "make me laugh"],
             "responses": ["No, I'm not funny", "Knock knock", "You're not even funny", "I hate your sense of humor", "Go ask siri", "Ok, but no", "Don't you have friends for that?", "I'm not even a real person go joke around with other people", "Really? are you that lonely"]
         },
 
         {
             "tag": "random",
-            "patterns": ["get me a random number", "get a random value", "give me a number", "generate a number", "pick a number"],
+            "patterns": ["get me a random number", "get random value", "give me a number", "generate a number", "pick a number", "pick random number", "pick number"],
             "responses": ["a random number would be", "its", "that would be", "true randomness is not real but take", "what do you think about"]
         },
 
@@ -92,8 +92,8 @@
 
         {
             "tag": "rolldie",
-            "patterns": ["roll a die"],
-            "responses": ["you got a 6", "looks like a 5", "this die gave you a 4", "what about a 3", "i give you 2", "my virtual die shows a 1"]
+            "patterns": ["roll a die", "throw a die"],
+            "responses": ["you got a 6", "looks like a 5", "this die gave you a 4", "what about a 3", "i give you 2", "my virtual die shows a 1", "die landed on 6", "you got a 5", "your lucky, its a 4", "you got 3", "the die has spoken, you got a 2", "you got 1", "I rolled my virtual die but i think it will keep on rolling for ever, try again."]
         },
 
         {
@@ -110,7 +110,7 @@
 
         {
             "tag": "youtube",
-            "patterns": ["get me a video on youtube", "open a video", "I want something to watch", "entertain me", "can you play some music", "play music", "can you play a song", "put on music", "start the music", "play me a song", "i want to hear some music","play video"],
+            "patterns": ["get me a video on youtube", "open a video", "I want something to watch", "entertain me", "can you play some music", "play music", "can you play a song", "put on music", "start the music", "play me a song", "i want to hear some music","play video", "play song"],
             "responses": ["what should i start for you", "what do you want to play", "ok, I'm in the mood too, what should i start", "what are you looking for", "looking for something specific", "looking to procrastinat are you? what should i start for you"]
         },
 
@@ -134,13 +134,13 @@
 
         {
             "tag": "Word",
-            "patterns": ["start a new project for me", "open word", "lets work on a new assignment", "new assignment", "lets start work", "new homework", "open new word", "start a new report", "make report"],
+            "patterns": ["start a new project for me", "open word", "lets work on a new assignment", "new assignment", "lets start work", "new homework", "open new word", "start a new report", "make report", "tart a new project"],
             "responses": ["starting your new assignment word document, what should i name it", "does it have a name that i should now of", "what should i name it", "what should i save it as"]
         },
 
         {
             "tag": "screenshot",
-            "patterns": ["take screen shot", "save the screen","take a picture for the screen","save the current screen","take a copy from the screen"],
+            "patterns": ["take screen shot", "save the screen","take a picture for the screen","save the current screen","take a copy from the screen", "take a screenshot", "can you take a screenshot", "take screenshot", "screenshot", "screen shot"],
             "responses": ["okay done", "okay easy", "here it is", "all is fine", "done", "OK but what are you saving it for"]
         },
 
