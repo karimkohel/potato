@@ -81,10 +81,12 @@ class Ui_voiceWindow(QWidget):
                     exitFlag = self.client.flagHandler(flag, response)
                     if "exit" in msg or flag == 9:
                         break
-                except ConnectionRefusedError or ConnectionAbortedError:
+                except (ConnectionRefusedError, ConnectionAbortedError):
                     sleep(1)
                     self.spr.speak(" - Connection Error : Server didn't connect : error code : 0CV361")
                     self.activeVoice = False
+                except OSError:
+                    pass
                 except ValueError as e:
                     self.spr.speak(" - Server Error : Pleas contact the developers : error code : 0CV362")
                     print(e)

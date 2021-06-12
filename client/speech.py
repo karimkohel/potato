@@ -1,20 +1,12 @@
 import speech_recognition as sr
 import pyttsx3 as tts
-import json
 import os
 
 class SpeechPatternRecognizer():
 
     def __init__(self):
 
-        # getting settings from file or creating it if none 
-        try:
-            with open("settings.json") as f:
-                self.settings = json.load(f)
-        except Exception:
-            self.settings = {'speech_speed': 170, 'voice_number': 0, 'music_folder': ''}
-            with open('settings.json', 'w') as f:
-                    json.dump(self.settings, f)
+        self.settings = {'speech_speed': 170, 'voice_number': 1, 'music_folder': ''}
 
         if os.name == "posix" :
             self.settings["voice_number"] = 33
@@ -23,6 +15,8 @@ class SpeechPatternRecognizer():
         self.speaker = tts.init()
         voices = self.speaker.getProperty('voices')
         self.speaker.setProperty('voice', voices[self.settings['voice_number']].id)
+        print("Voice : " + str(self.settings['voice_number']))
+        print("OS NAME : " + os.name)
         self.speaker.setProperty('rate', self.settings["speech_speed"])
 
         # init speech recognizer engine with google
