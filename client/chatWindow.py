@@ -1,6 +1,3 @@
-import sys, os
-import socket
-from unicodedata import name
 from client_fx import mappings
 from usersock import ClientSock
 from PyQt5 import QtCore, QtGui, QtWidgets
