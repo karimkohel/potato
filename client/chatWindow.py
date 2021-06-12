@@ -17,11 +17,9 @@ class Ui_chatWindow(QWidget):
         self.MainWindow = MainWindow
 
     def setupUi(self, Form):
-        try:
-            self.client = ClientSock("172.104.141.41",5000, mappings)
-            self.client.connect()
-        except ConnectionRefusedError:
-            print(" - Connection Error: Server didn't connect")
+       
+            
+                
 
         Form.setObjectName("Start Chat")
         Form.resize(500, 600)
@@ -79,11 +77,21 @@ class Ui_chatWindow(QWidget):
                                         QPushButton::hover{background-color:lightcyan;
                                         }"""
         )
+        try:
+            self.client = ClientSock("172.104.141.41",5000, mappings)
+            self.client.connect()
+        except ConnectionRefusedError :
+            print(" - Connection Error: Server didn't connect")
+        except OSError:
+             self.showResponse("check internet connection",0)
+             
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
         
         self.sendButton.clicked.connect(self.clickButton)
         self.endButton.clicked.connect(self.closeButton)
+
+        
 
 
 
