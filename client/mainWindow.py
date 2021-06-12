@@ -18,7 +18,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(100, 210, 301, 81))
-        self.label.setStyleSheet("font: 87 16pt \"Optima\";\n"
+        self.label.setStyleSheet("font: 87 12pt \"Optima\";\n"
         "color: rgb(147, 0, 0);")
         self.label.setTextFormat(QtCore.Qt.AutoText)
         self.label.setAlignment(QtCore.Qt.AlignCenter)
