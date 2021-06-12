@@ -69,11 +69,9 @@ def downloadMusic(response, server, client):
         
 def prayerTime(response, server, client):
     try:
-        try:
-            source = requests.get('https://egypt.timesprayer.com/en/prayer-times-in-cairo.html').text
-        except Exception as e:
-            print(e)
-            pass
+    
+        source = requests.get('https://egypt.timesprayer.com/en/prayer-times-in-cairo.html').text
+
         soup = BeautifulSoup(source, 'lxml')
         prayer_time = soup.find('div', id='countdown').text
         salah = soup.find('div', class_='info mobile').h3.text
@@ -81,6 +79,8 @@ def prayerTime(response, server, client):
         server.sendMessage(client, response + " " +salah[2]+" in "+prayer_time, 0)
     except TimeoutError:
         server.sendMessage(client, "internet connection error occured, try again later", 0)
+    except Exception as e:
+        print(e)
 
 def startWordProject(response, server, client):
     server.sendMessage(client, response)
