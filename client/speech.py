@@ -30,8 +30,11 @@ class SpeechPatternRecognizer():
 
     def speak(self, text):
         self.speaker.say(text)
-        self.speaker.runAndWait()
-        
+        try:
+            self.speaker.runAndWait()
+        except Exception as e:
+            self.speak("CHeack your internet connection please")
+        pass
 
     def listen(self, stealthMode = False):
 

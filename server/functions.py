@@ -69,7 +69,11 @@ def downloadMusic(response, server, client):
         
 def prayerTime(response, server, client):
     try:
-        source = requests.get('https://egypt.timesprayer.com/en/prayer-times-in-cairo.html').text
+        try:
+            source = requests.get('https://egypt.timesprayer.com/en/prayer-times-in-cairo.html').text
+        except Exception as e:
+            print(e)
+            pass
         soup = BeautifulSoup(source, 'lxml')
         prayer_time = soup.find('div', id='countdown').text
         salah = soup.find('div', class_='info mobile').h3.text
