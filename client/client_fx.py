@@ -43,8 +43,8 @@ def startWordProject(response):
 
 def screenShot(response):
     screenShot = screenshot()
-    directory =os.path.join(os.path.join(os.environ['USERPROFILE']), 'Desktop')+"\\"
-    screenShot.save(directory+"screenshot.png")  
+    directory = os.path.join(os.path.join(os.environ['USERPROFILE']), 'Desktop')+"\\"
+    screenShot.save(directory + "screenshot.png")  
    
 def higherbrightness(response):
     if os.name != "posix" :
