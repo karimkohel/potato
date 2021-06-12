@@ -64,7 +64,11 @@ class Ui_voiceWindow(QWidget):
         while self.activeVoice:
 
             self.spr.waitForWakeupCall("potato")
-            self.client.connect()
+            try:
+                self.client.connect()
+            except Exception as e:
+                self.spr.speak(" - Connection Error : Server didn't connect : error code : 0CV360")
+                print(e)
             
             while self.activeVoice:
                 try:
