@@ -1,6 +1,6 @@
 from client_fx import mappings
 from usersock import ClientSock
-from PyQt5 import QtCore, QtWidgets
+from PyQt5 import QtCore, QtWidgets, QtGui
 from PyQt5.QtGui import QCursor
 from PyQt5.QtWidgets import QWidget
 
@@ -86,6 +86,7 @@ class Ui_chatWindow(QWidget):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Start Chat", "Start Chat"))
+        Form.setWindowIcon(QtGui.QIcon('hello.png'))
         self.sendButton.setText(_translate("Start Chat", "Send"))
         self.endButton.setText(_translate("Start Chat", "End Chat"))
 

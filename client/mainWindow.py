@@ -73,6 +73,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate #converts from ui to py
         MainWindow.setWindowTitle(_translate("MainWindow", "Potato is here.."))
+        MainWindow.setWindowIcon(QtGui.QIcon('hello.png'))
         self.label.setText(_translate("MainWindow", "How do you want to ask potato?"))
         self.chatButton.setText(_translate("MainWindow", "Chat"))
         self.voiceButton.setText(_translate("MainWindow", "Voice"))

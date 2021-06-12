@@ -57,6 +57,7 @@ class Ui_voiceWindow(QWidget):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate #converts from ui to py
         self.Form.setWindowTitle(_translate("Voice Chat", "Potato is listening.."))
+        self.Form.setWindowIcon(QtGui.QIcon('hello.png'))
         self.endButton.setText(_translate("Voice Chat", "Back"))
 
     def handleVoiceControl(self):
