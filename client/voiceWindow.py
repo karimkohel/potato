@@ -1,12 +1,8 @@
-import sys, os
-import socket
 from client_fx import mappings
 from usersock import ClientSock
-from PyQt5.QtWidgets import *
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtGui import QCursor, QIcon, QPixmap, QFont
-from PyQt5.Qt import Qt
-from PyQt5.QtWidgets import (QApplication, QWidget)
+from PyQt5.QtGui import QCursor
+from PyQt5.QtWidgets import QWidget
 from speech import SpeechPatternRecognizer
 import threading
 from time import sleep

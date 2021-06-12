@@ -1,9 +1,5 @@
-import sys, os
-import socket
-from client_fx import mappings
-from usersock import ClientSock
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtGui import QCursor, QIcon, QPixmap, QFont
+from PyQt5.QtGui import QCursor
 from chatWindow import Ui_chatWindow
 from voiceWindow import Ui_voiceWindow
 
