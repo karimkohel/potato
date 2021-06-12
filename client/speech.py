@@ -15,8 +15,6 @@ class SpeechPatternRecognizer():
         self.speaker = tts.init()
         voices = self.speaker.getProperty('voices')
         self.speaker.setProperty('voice', voices[self.settings['voice_number']].id)
-        print("Voice : " + str(self.settings['voice_number']))
-        print("OS NAME : " + os.name)
         self.speaker.setProperty('rate', self.settings["speech_speed"])
 
         # init speech recognizer engine with google
