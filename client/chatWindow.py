@@ -80,8 +80,8 @@ class Ui_chatWindow(QWidget):
         except ConnectionRefusedError :
             print(" - Connection Error: Server didn't connect")
         except OSError:
-             self.showResponse("check internet connection",0)
-             
+            self.showResponse("check internet connection",0)
+
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
         
@@ -118,16 +118,18 @@ class Ui_chatWindow(QWidget):
         return msg
 
     def clickButton(self):
+        try:
+            if self.typingBox.text():
+                msg = self.showInput()
+                self.client.sendMsg(msg)
 
-        if self.typingBox.text():
-            msg = self.showInput()
-            self.client.sendMsg(msg)
+                response, flag = self.client.recvMsg()
+                self.showResponse(response, flag)
 
-            response, flag = self.client.recvMsg()
-            self.showResponse(response, flag)
-
-            if self.client.flagHandler(flag, response):
-                self.closeButton()
+                if self.client.flagHandler(flag, response):
+                    self.closeButton()
+        except OSError:
+            self.showResponse("server did't connect",0)            
 
 
     def closeButton(self):
