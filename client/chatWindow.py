@@ -80,7 +80,7 @@ class Ui_chatWindow(QWidget):
         except ConnectionRefusedError :
             print(" - Connection Error: Server didn't connect")
         except OSError:
-            self.showResponse("check internet connection",0)
+            self.showResponse("check internet connection error code : 0CW368",0)
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -129,7 +129,7 @@ class Ui_chatWindow(QWidget):
                 if self.client.flagHandler(flag, response):
                     self.closeButton()
         except OSError:
-            self.showResponse("server did't connect",0)            
+            self.showResponse("server did't connect error code : 0CV367",0)            
 
 
     def closeButton(self):
