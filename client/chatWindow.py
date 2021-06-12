@@ -34,6 +34,11 @@ class Ui_chatWindow(QWidget):
                                     "background-color: rgb(255, 249, 239);"
                                     "border-radius: 4px;"
         )
+        ## moved this from inside the send button to here
+        self.chatBox.setStyleSheet("font:  75 16pt 'Optima';" + 
+                                    "color: 'red';"
+        )
+        ##
 
         
         self.chatBox.setObjectName("chatBox")
@@ -109,18 +114,15 @@ class Ui_chatWindow(QWidget):
 
     def clickButton(self):
 
-        self.chatBox.setStyleSheet("font:  75 16pt 'Optima';"
-                                    "color: 'red';"
-        )
+        if self.typingBox.text():
+            msg = self.showInput()
+            self.client.sendMsg(msg)
 
-        msg = self.showInput()
-        self.client.sendMsg(msg)
+            response, flag = self.client.recvMsg()
+            self.showResponse(response, flag)
 
-        response, flag = self.client.recvMsg()
-        self.showResponse(response, flag)
-
-        if self.client.flagHandler(flag, response):
-            self.closeButton()
+            if self.client.flagHandler(flag, response):
+                self.closeButton()
 
 
     def closeButton(self):

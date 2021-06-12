@@ -1,9 +1,5 @@
-import sys, os
-import socket
-from client_fx import mappings
-from usersock import ClientSock
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtGui import QCursor, QIcon, QPixmap, QFont
+from PyQt5.QtGui import QCursor
 from chatWindow import Ui_chatWindow
 from voiceWindow import Ui_voiceWindow
 
@@ -22,7 +18,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(100, 210, 301, 81))
-        self.label.setStyleSheet("font: 87 18pt \"Optima\";\n"
+        self.label.setStyleSheet("font: 87 16pt \"Optima\";\n"
         "color: rgb(147, 0, 0);")
         self.label.setTextFormat(QtCore.Qt.AutoText)
         self.label.setAlignment(QtCore.Qt.AlignCenter)
