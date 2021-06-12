@@ -33,15 +33,14 @@ class SpeechPatternRecognizer():
         try:
             self.speaker.runAndWait()
         except Exception as e:
-            self.speak("CHeack your internet connection please")
-        pass
+            self.speak("Cheack your internet connection please, error : ", e)
 
     def listen(self, stealthMode = False):
 
         while True:
             try:
                 with sr.Microphone() as mic:
-                    self.recognizer.adjust_for_ambient_noise(mic)
+                    self.recognizer.adjust_for_ambient_noise(mic, duration=0.1)
                     audio = self.recognizer.listen(mic)
 
                     text = self.recognizer.recognize_google(audio)
