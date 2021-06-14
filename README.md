@@ -12,6 +12,7 @@ Potato is mainly an assistant that would help you use your computer with voice c
  - open up an new word document for your next report
  - roll a die or toss a coin
  - take a screen shot of your computer
+ - go in and out of focus in voice chat to help you with tasks without another IO method
 
 ## How to use potato
 Potato has 2 main windows, the voice and text chat windows and it will have full functionality in both modes.
@@ -27,7 +28,7 @@ you can start chatting with potato while it is in the background without clickin
 to close potato completely using voice command you can use keyword `exit` in any context and potato will exit entirely.
 
 
-### How to start developement
+### How to start contribute
  - clone the repo by opening gitbash in the desired folder and running the command 
  
 `git clone https://github.com/karimkohel/potato.git`
