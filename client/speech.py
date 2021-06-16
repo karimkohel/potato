@@ -25,7 +25,7 @@ class SpeechPatternRecognizer():
         try:
             self.speaker.runAndWait()
         except Exception as e:
-            self.speak("Cheack your internet connection please, error : ", e)
+            self.speak("Cheack your internet connection please, error : " + str(e))
 
     def listen(self, stealthMode = False):
 
