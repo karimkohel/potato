@@ -1,0 +1,105 @@
+{
+ "version": "auto-py-to-exe-configuration_v1",
+ "pyinstallerOptions": [
+  {
+   "optionDest": "noconfirm",
+   "value": true
+  },
+  {
+   "optionDest": "filenames",
+   "value": "K:/Projects/python/potato/client/potato.py"
+  },
+  {
+   "optionDest": "onefile",
+   "value": false
+  },
+  {
+   "optionDest": "console",
+   "value": false
+  },
+  {
+   "optionDest": "icon_file",
+   "value": "K:/Projects/python/potato/client/icon.ico"
+  },
+  {
+   "optionDest": "ascii",
+   "value": false
+  },
+  {
+   "optionDest": "clean_build",
+   "value": false
+  },
+  {
+   "optionDest": "strip",
+   "value": false
+  },
+  {
+   "optionDest": "noupx",
+   "value": false
+  },
+  {
+   "optionDest": "uac_admin",
+   "value": false
+  },
+  {
+   "optionDest": "uac_uiaccess",
+   "value": false
+  },
+  {
+   "optionDest": "win_private_assemblies",
+   "value": false
+  },
+  {
+   "optionDest": "win_no_prefer_redirects",
+   "value": false
+  },
+  {
+   "optionDest": "bootloader_ignore_signals",
+   "value": false
+  },
+  {
+   "optionDest": "datas",
+   "value": "K:/Projects/python/potato/client/hello.png;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "K:/Projects/python/potato/client/hi.png;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "K:/Projects/python/potato/client/kiss-01.png;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "K:/Projects/python/potato/client/welcome.png;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "K:/Projects/python/potato/client/welcomePotato-01.png;."
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "pyttsx3.drivers"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "pyttsx3.drivers.dummy"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "pyttsx3.drivers.espeak"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "pyttsx3.drivers.nsss"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "pyttsx3.drivers.sapi5"
+  }
+ ],
+ "nonPyinstallerOptions": {
+  "increaseRecursionLimit": true,
+  "manualArguments": ""
+ }
+}
