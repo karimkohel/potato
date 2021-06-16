@@ -1,7 +1,56 @@
 # Potato
-A  beuatiful AI assistant to help students with their uni life that is centralized on a server somewhere
 
-## What can it do
+A beuatiful AI assistant to help students with their uni life that is centralized on a server somewhere
+
+
+## Badges
+
+![GitHub top language](https://img.shields.io/github/languages/top/karimkohel/potato?style=flat-square)
+
+![GitHub issues](https://img.shields.io/github/issues/karimkohel/potato?style=flat-square)
+
+![GitHub Repo stars](https://img.shields.io/github/stars/karimkohel/potato?style=flat-square)
+## Installation 
+
+Just install using the installer in the [Latest Release](https://github.com/karimkohel/potato/releases)
+    
+## Demo
+
+#### Main Window
+- Potato has 2 main windows, the voice and text chat windows and it will have full functionality in both modes.
+- You can acces both windows from the main window.
+![Main window](https://raw.githubusercontent.com/karimkohel/potato/main/demo/main.PNG)
+
+#### Chat Window
+- Open the text window to chat normally as you would any chat application.
+- Potato will chat with you casually or carry out the tasks you request.
+![Chat window](https://raw.githubusercontent.com/karimkohel/potato/main/demo/chat.PNG)
+
+#### Voice Window
+- Open the voice window and minimize potato so that it is listining in the background and waiting for you to start chatting by saying **Hey potato**.
+- You can start chatting with potato while it is in the background without clicking on it, asking what you need and then sending it away is as easy as calling it with **go away** so it goes back to the background awaiting your next call.
+- To close potato completely using voice command you can use keyword **exit** in any context and potato will exit entirely.
+![Chat window](https://raw.githubusercontent.com/karimkohel/potato/main/demo/voice.PNG)
+## Tech Stack
+
+##### **Client:** 
+- PyQT5
+- Pyttsx3
+- Google speech recognition
+- Pytube
+- Docx
+- PyautoGUI
+
+##### **Server:**
+- Tensforflow 2.0
+- Keras
+- NLTK
+- Requests
+- Threaded sockets
+- Urllib3
+- BeautifulSoup4
+## Features and Functions
+
 Potato is mainly an assistant that would help you use your computer with voice command with functionality as but not limited to:
 
  - opening up search windows with your default browser
@@ -13,51 +62,21 @@ Potato is mainly an assistant that would help you use your computer with voice c
  - roll a die or toss a coin
  - take a screen shot of your computer
  - go in and out of focus in voice chat to help you with tasks without another IO method
+## Contributing
 
-## How to use potato
-Potato has 2 main windows, the voice and text chat windows and it will have full functionality in both modes.
+Contributions are always welcome!
 
-#### Text with potato
-to text with potato you have to choose the text page and you can start texting right away.
+See [contributing.md](https://github.com/karimkohel/potato/blob/main/contributing.md) for ways to get started.
 
-#### Voice chat with potato
-to use voice chat just open the voice window and minimize potato so that it is listining in the background and waiting for you to start chatting by saying `hey potato`.
+Please adhere to this project's `code of conduct`.
+## Support
 
-you can start chatting with potato while it is in the background without clicking on it, asking what you need and then sending it away is as easy as calling it with `go away` so it goes back to the background awaiting your next call.
+For general support [open an issue](https://github.com/karimkohel/potato/issues) describing your problem or feature request
 
-to close potato completely using voice command you can use keyword `exit` in any context and potato will exit entirely.
+- Be as detailed as possible in issue description
+- include what error code you got if any
 
-
-### How to start contribute
- - clone the repo by opening gitbash in the desired folder and running the command 
- 
-`git clone https://github.com/karimkohel/potato.git`
-
- - check the projects section of the repo on github to see where we are on development
- - check your conda env is working and install libraries in said env with `pip install -r requirements.txt`
- - after editing a file you should always commit when you finish a specific edit
-
-`git add .`
-
-`git commit -m "your msg"`
-
- - remember to push after a work session for other contributers to work on the updated version
-
-`git push`
-
- - and when starting to work again on the local repo always pull in changes that other people did while you were away with
-
-`git pull`
-
-#### server script
-the server script will host the main logic and body of the project with the sockets working to accept and send data to clients all over
-
-#### client app
-client app will use a gui and a text to speach engine/speach recognition engine to recieve and output the speach to users that is fetched from server script over a socket
-
-
-### ERROR CODES:
-
+#### Error codes
 |Code |Def  |
 | --- | --- |
 |0CVXXX|Client Voice Error |
@@ -66,3 +85,10 @@ client app will use a gui and a text to speach engine/speach recognition engine 
 |0SIXXX|Server Intents Error|
 |0SFXXX|Server Function Error|
 |0SSXXX|Server Socket Error|
+
+## Authors
+
+- [@karimkohel](https://www.github.com/karimkohel)
+- [@NourhanElyamany](https://www.github.com/NourhanElyamany)
+- [@Mohameosama](https://www.github.com/Mohameosama)
+- [@omar9991](https://www.github.com/omar9991)
