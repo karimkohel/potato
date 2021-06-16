@@ -1,20 +1,24 @@
-### How to start contribute
- - clone the repo by opening gitbash in the desired folder and running the command 
- 
-`git clone https://github.com/karimkohel/potato.git`
+# Contributing to Potato
+Before getting into any of the contrib title you should run the app localy using a local test server and client server
 
- - check the projects section of the repo on github to see where we are on development
- - check your conda env is working and install libraries in said env with `pip install -r requirements.txt`
- - after editing a file you should always commit when you finish a specific edit
+#### steps for opening a successfull pull request
+1. fork the repo
+2. work on whatever part you see fit
+3. commit regularly
+4. fetch regularly
+5. open pull request
 
-`git add .`
+## Setup
 
-`git commit -m "your msg"`
+- clone the repo 
+	- `git clone https://github.com/karimkohel/potato.git`
+- start a new python env
+- install all dependencies:
+	- `pip install -r requirements.txt`
+- to work on the server you should
+	- change the socket ip addres from remot server to local server in client/voicewindow.py and client/chatwindow.py
+	- start the server from server/server.py
+- start the client app from client/potato.py
 
- - remember to push after a work session for other contributers to work on the updated version
-
-`git push`
-
- - and when starting to work again on the local repo always pull in changes that other people did while you were away with
-
-`git pull`
+## What can you do right now
+ - Add Intents in server/intents.json
