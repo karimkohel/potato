@@ -42,7 +42,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.voiceButton.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
         self.voiceButton.setStyleSheet("""QPushButton{color: rgb(255, 144, 77);
         background-color: 'white';
-        font: 75 italic 16pt "Optima";
+        font: 75 italic 18pt "Optima";
         border:0px solid;
         border-radius: 6px;}
         QPushButton::hover{background-color:bisque;
