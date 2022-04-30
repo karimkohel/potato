@@ -1,6 +1,3 @@
-from importlib.util import spec_from_file_location
-from operator import truediv
-from re import T
 from speech import SpeechPatternRecognizer
 
 spr = SpeechPatternRecognizer()
