@@ -1,8 +1,6 @@
 import random
 from datetime import datetime
 import requests
-import re
-import urllib
 from bs4 import BeautifulSoup
 
 def randomRange(response, server, client):

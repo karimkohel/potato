@@ -1,11 +1,9 @@
-from http import client
 from urllib.request import Request
 from fastapi import FastAPI
 import neuralintents
 from functions_tomato import mappings
-from fastapi.encoders import jsonable_encoder
-from requests import request
 import uvicorn
+
 class request():
     mas: str
     

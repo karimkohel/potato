@@ -1,11 +1,9 @@
 import requests
 
 class Handler():
-    def __init__(self, ip, port, functions):
+    def __init__(self, ip, functions):
         self.functions = functions
         self.ip = ip
-        self.port = port
-
     
     # there should be a master table with all request codes
     def handleRequest(self, requestCode):
