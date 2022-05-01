@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 
 def randomRange(response, server, client):
     try:
-        server.sendMessage(client, "till what number should i guess")
+        #m7tag session 
         rangeInput = server.getMessage(client)
         number = random.randint(0, int(rangeInput))
         server.sendMessage(client, response + " " + str(number), 0)
