@@ -1,7 +1,7 @@
 from urllib.request import Request
 from fastapi import FastAPI
 import neuralintents
-from functions_tomato import mappings
+from tomatoServer.functions_tomato import mappings
 import uvicorn
 
 class request():
