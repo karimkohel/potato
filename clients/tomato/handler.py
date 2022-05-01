@@ -13,8 +13,7 @@ class Handler():
 
     def getResponse(self, txtMsg):
         msg = {
-            "client":"tomato",
             "msg":txtMsg
         }
-        # response = requests.post("<URL>", json=msg)
+        response = requests.post(self.ip, json=msg)
         return response
