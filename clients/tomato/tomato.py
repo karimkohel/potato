@@ -17,4 +17,7 @@ while True:
         # if json response has function code then execute said function
         if response["function"]:
             handler.handleFunction(response['function'])
+        # if response has an exit flag then exit and wait for next wake up
+        if response['exit']:
+            break
 
