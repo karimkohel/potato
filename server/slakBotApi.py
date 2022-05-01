@@ -13,7 +13,9 @@ app = FastAPI()
 request_file = "request.jason"
 requests = []
 
-bot = neuralintents.GenericAssistant("server/intents_tomato.json", mappings, "model_tomato")
+bot = neuralintents.GenericAssistant("server/tomatoServer/intents_tomato.json", mappings, "model_tomato")
+bot.train_model()
+bot.save_model()
 bot.load_model()
 
    
