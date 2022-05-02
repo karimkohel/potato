@@ -6,6 +6,7 @@ def helloPotato():
 
 
 
+# key: function code
 mappings = {
     "0": helloPotato,
 }

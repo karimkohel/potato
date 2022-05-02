@@ -1,9 +1,10 @@
 from speech import SpeechPatternRecognizer
 from handler import Handler
-from tomatoFx import mappings
+from tomatoFx import mappings as functions
+
 
 spr = SpeechPatternRecognizer()
-handler = Handler("127.0.0.1/potato:5050", mappings)
+handler = Handler("127.0.0.1/potato:5050")
 
 
 while True:
@@ -15,8 +16,8 @@ while True:
         # speak the msg part of that json
         spr.speak(response['msg'])
         # if json response has function code then execute said function
-        if response["function"]:
-            handler.handleFunction(response['function'])
+        if response["functionCode"]:
+            functions[response["functionCode"]]()
         # if response has an exit flag then exit and wait for next wake up
         if response['exit']:
             break
