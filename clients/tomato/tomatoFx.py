@@ -4,6 +4,9 @@ def helloPotato():
     # blink
     pass
 
+def changeLedStrip():
+    pass
+
 
 
 # key: function code

@@ -3,6 +3,8 @@ from handler import Handler
 from tomatoFx import mappings as functions
 
 
+# use this link for gpio interupts
+
 spr = SpeechPatternRecognizer()
 handler = Handler("127.0.0.1/potato:5050")
 
