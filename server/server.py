@@ -1,20 +1,37 @@
-import socket
-from botsocks import ServerSock
+from tomatoServer.functions_tomato import mappings
+from fastapi import FastAPI
 import neuralintents
-import threading
-from pcServer.functions import mappings
+import uvicorn
+from pydantic import BaseModel
 
+class Request(BaseModel):
+    msg : str
+    
 
-bot = neuralintents.GenericAssistant("server/intents.json", mappings, "model")
+app = FastAPI()
+bot = neuralintents.GenericAssistant("server/tomatoServer/intents_tomato.json", mappings, "server/tomatoServer/model_tomato")
 # bot.train_model()
 # bot.save_model()
 bot.load_model()
 
-serverObj =  ServerSock(socket.gethostbyname(socket.gethostname()), 5000, bot)
+
+@app.post("/potato")
+def handleClient(request: Request):
+    response = bot.request(request.msg)
+    return response
 
 
-while True:
-    clientSocket = serverObj.accept()
+if __name__ == "__main__":
+    uvicorn.run(app, host="127.0.0.1", port=5050)
 
-    t = threading.Thread(target=serverObj.handelClient, args=(clientSocket, ))
-    t.start()
+# Protocooooool
+# Request:
+# {
+#     "msg": user text: String
+# }
+
+# Response:
+# {
+#     "res": bot response + function response if any : String,
+#     "clientFunctionCode": int
+# }
