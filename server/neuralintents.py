@@ -184,7 +184,9 @@ class GenericAssistant(IAssistant):
 
         if ints[0]['intent'] in self.intent_methods.keys():
             # if a tag has a function map it will go in here
-            self.intent_methods[ints[0]['intent']](self._get_response(ints, self.intents))
+           answer = self.intent_methods[ints[0]['intent']](self._get_response(ints, self.intents))
         else:
             # if no function map just send response
-            self._get_response(ints, self.intents)
+           answer = self._get_response(ints, self.intents)
+
+        return answer   

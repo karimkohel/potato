@@ -1,16 +1,6 @@
-from speech import SpeechPatternRecognizer
+import requests
 
-spr = SpeechPatternRecognizer()
 
-spr.speak("powered on")
+x = requests.post("http://127.0.0.1:8000/potato",json={"msg" : "what is the date"})
 
-# while True:
-
-#     spr.waitForWakeupCall("tomato")
-
-#     while True:
-#         msg = spr.listen()
-#         spr.speak("Comment: send result to server and get answer")
-#         spr.speak("Comment: speak response")
-#         spr.speak("Comment: carry out task")
-#         break
+print(x.json())
