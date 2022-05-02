@@ -1,0 +1,9 @@
+h5py==2.10.0
+tensorflow==2.2
+Keras==2.4
+lxml==4.6.3
+beautifulsoup4==4.11
+nltk==3.6.2
+numpy==1.19.5
+uvicorn==0.17.6
+fastapi==0.75.2

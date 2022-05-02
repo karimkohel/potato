@@ -1,0 +1,12 @@
+Pillow==8.2.0
+PyAudio==0.2.11
+PyAutoGUI==0.9.52
+PyMsgBox==1.0.9
+PyQt5==5.15.4
+python-docx==0.8.10
+pyttsx3==2.90
+SpeechRecognition==3.8.1
+pytube==10.8.4
+PyTweening==1.0.3
+screen-brightness-control==0.8.5
+urllib3==1.26.4

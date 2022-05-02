@@ -2,7 +2,7 @@ import socket
 from botsocks import ServerSock
 import neuralintents
 import threading
-from functions import mappings
+from pcServer.functions import mappings
 
 
 bot = neuralintents.GenericAssistant("server/intents.json", mappings, "model")
