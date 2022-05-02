@@ -1,10 +1,6 @@
-# from http import client
-# from urllib.request import Request
+from server.tomatoServer.functions_tomato import mappings
 from fastapi import FastAPI
 import neuralintents
-from functions_tomato import mappings
-# from fastapi.encoders import jsonable_encoder
-# from requests import request
 import uvicorn
 from pydantic import BaseModel
 class Request(BaseModel):
@@ -37,5 +33,5 @@ def handleClient(request: Request):
     # return bot.request(Request.msg)
 
 
- if __name__ == "__main__":
-     uvicorn.run(app, host="0.0.0.0", port=5050)
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=5050)
