@@ -14,11 +14,12 @@ Before getting into any of the contrib title you should run the app localy using
 	- `git clone https://github.com/karimkohel/potato.git`
 - start a new python env
 - install all dependencies:
-	- `pip install -r requirements.txt`
+	- each subsystem contains the requirements file for said subsystem so go ahead and install the requirements for your chosen area of contribution
+	- > $ pip install -r requirements.txt
 - to work on the server you should
 	- change the socket ip addres from remot server to local server in client/voicewindow.py and client/chatwindow.py
 	- start the server from server/server.py
 - start the client app from client/potato.py
 
 ## What can you do right now
- - Add Intents in server/intents.json
+ - Add Intents in server/tomatoServer/intents.json or server/pcServer/intents.json
