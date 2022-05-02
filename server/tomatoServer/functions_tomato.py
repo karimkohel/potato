@@ -21,19 +21,22 @@ def getDate(intent):
 def getTime(intent, server, client):
     time = datetime.now().time()
     time = time.strftime( "%H: %M: %S")
-    server.sendMessage(client, intent + " "+ time,0) 
+    return {"res":intent + " "+ time} 
 
-def getWeather(intent, server, client):
+def getWeather(intent):
     api = 'http://api.openweathermap.org/data/2.5/weather?q=Cairo&appid=f1e62ab85ff8b2eca979678d57a6de2e&units=metric' 
     try:
         allData = requests.get(api).json()
         weather = allData['weather'][0]['description']
         temp = allData['main']['temp']
-        server.sendMessage(client, intent + " " + weather + ", with temperatures around " + str(int(temp)) + " degrees", 0)
+        return {"res": intent + " " + weather + ", with temperatures around " + str(int(temp)) + " degrees"}
+        
     except TimeoutError:
-        server.sendMessage(client,  "internet connection error occured, try again later", 0)
+        
+        return {"res": "internet connection error occured, try again later"}
     except Exception:
-        server.sendMessage(client,  "An error occured, try again later", 0)
+        
+        return {"res": "An error occured, try again later"}
 
         
 def prayerTime(intent):
@@ -50,8 +53,8 @@ def prayerTime(intent):
         return {"res": "internet connection error occured, try again later"}
 
 
-def goodBye(intent, server, client):
-    server.sendMessage(client, intent, 9)
+def goodBye(intent):
+    return {"res": intent }
 
 mappings = {
     "random" : randomRange,
