@@ -4,6 +4,7 @@ from tomatoFx import mappings as functions
 
 
 # use this link for gpio interupts
+# https://sourceforge.net/p/raspberry-gpio-python/wiki/Inputs/
 
 spr = SpeechPatternRecognizer()
 handler = Handler("127.0.0.1/potato:5050")
