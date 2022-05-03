@@ -2,6 +2,7 @@ import random
 from datetime import datetime
 import requests
 from bs4 import BeautifulSoup
+import pytz
 
 def randomRange(intent):
     try:
@@ -18,9 +19,10 @@ def getDate(intent):
     dateString = date.strftime(" %A ,%B %d, %Y ")
     return {"res" : intent + dateString}
 
-def getTime(intent, server, client):
-    time = datetime.now().time()
-    time = time.strftime( "%H: %M: %S")
+def getTime(intent):
+    
+    time_f = datetime.now(pytz.timezone('Africa/Cairo')).time()
+    time = time_f.strftime( "%H: %M: %S")
     return {"res":intent + " "+ time} 
 
 def getWeather(intent):
@@ -36,7 +38,7 @@ def getWeather(intent):
         return {"res": "internet connection error occured, try again later"}
     except Exception:
         
-        return {"res": "An error occured, try again later"}
+        return {"res": intent+"An error occured, try again later"}
 
         
 def prayerTime(intent):
