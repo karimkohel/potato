@@ -10,4 +10,4 @@ class Handler():
             "msg":txtMsg
         }
         response = requests.post(self.ip, json=msg)
-        return response
+        return response.json()

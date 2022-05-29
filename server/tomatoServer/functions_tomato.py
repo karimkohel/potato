@@ -5,14 +5,8 @@ from bs4 import BeautifulSoup
 import pytz
 
 def randomRange(intent):
-    try:
-        #m7tag session 
-        rangeInput = server.getMessage(client)
-        number = random.randint(0, int(rangeInput))
-        server.sendMessage(client, intent + " " + str(number), 0)
-    except ValueError:
-        server.sendMessage(client, "Incorrect value you should enter only a number, ask again", 0)
-        
+    number = random.randint(0, 10)
+    return {"res": intent+" "+str(number)}        
 
 def getDate(intent):
     date = datetime.now()

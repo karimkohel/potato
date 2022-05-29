@@ -9,20 +9,20 @@ class Request(BaseModel):
     
 
 app = FastAPI()
-bot = neuralintents.GenericAssistant("server/tomatoServer/intents_tomato.json", mappings, "server/tomatoServer/model_tomato")
-# bot.train_model()
-# bot.save_model()
-bot.load_model()
+tomatoBot = neuralintents.GenericAssistant("server/tomatoServer/intents_tomato.json", mappings, "server/tomatoServer/model_tomato")
+# tomatoBot.train_model()
+# tomatoBot.save_model()
+tomatoBot.load_model()
 
 
 @app.post("/potato")
 def handleClient(request: Request):
-    response = bot.request(request.msg)
+    response = tomatoBot.request(request.msg)
     return response
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=5050)
+    uvicorn.run(app, host="192.168.2.10", port=5050)
 
 # Protocooooool
 # Request:

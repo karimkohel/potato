@@ -181,12 +181,13 @@ class GenericAssistant(IAssistant):
 
     def request(self, message):
         ints = self._predict_class(message)
+        answer = self._get_response(ints, self.intents)
 
         if ints[0]['intent'] in self.intent_methods.keys():
             # if a tag has a function map it will go in here
-           answer = self.intent_methods[ints[0]['intent']](self._get_response(ints, self.intents))
+           res = self.intent_methods[ints[0]['intent']](answer)
         else:
             # if no function map just send response
-           answer = self._get_response(ints, self.intents)
+           res = {"res": answer}
 
-        return answer   
+        return res  

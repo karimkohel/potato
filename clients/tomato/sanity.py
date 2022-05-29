@@ -1,6 +1,6 @@
 import requests
 
 
-x = requests.post("http://127.0.0.1:5050/potato",json={"msg" : "when is prayer"})
+x = requests.post("http://192.168.2.10:5050/potato",json={"msg" : "give me a number"})
 
 print(x.json())
