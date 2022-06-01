@@ -1,15 +1,12 @@
 # import gpio lib
 
 def helloPotato():
-    # blink
+    # blink a led 
     pass
 
-def changeLedStrip():
+def listenForTemp():
     pass
 
+def listenForGas():
+    pass
 
-
-# key: function code
-mappings = {
-    "0": helloPotato,
-}
