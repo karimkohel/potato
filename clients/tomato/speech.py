@@ -6,10 +6,10 @@ class SpeechPatternRecognizer():
 
     def __init__(self):
 
-        self.settings = {'speech_speed': 170, 'voice_number': 1, 'music_folder': ''}
+        self.settings = {'speech_speed': 160, 'voice_number': 1, 'music_folder': ''}
 
         if os.name == "posix" :
-            self.settings["voice_number"] = 33
+            self.settings["voice_number"] = 17
 
         # init text to speech engine with specified settings
         self.speaker = tts.init()
@@ -31,8 +31,8 @@ class SpeechPatternRecognizer():
 
         while True:
             try:
-                with sr.Microphone() as mic:
-                    self.recognizer.adjust_for_ambient_noise(mic, duration=0.1)
+                with sr.Microphone(device_index=1) as mic:
+                    self.recognizer.adjust_for_ambient_noise(mic, duration=0.8)
                     audio = self.recognizer.listen(mic)
 
                     text = self.recognizer.recognize_google(audio)
