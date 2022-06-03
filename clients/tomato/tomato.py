@@ -6,7 +6,7 @@ from time import sleep
 
 spr = SpeechPatternRecognizer()
 hardware = tfx.HardWare(25, 6, 21, spr) # input pins for fire, gas, touch
-handler = Handler("http://192.168.2.10:5050/potato")
+handler = Handler("http://172.104.141.41:5050/potato")
 
 
 while True:
