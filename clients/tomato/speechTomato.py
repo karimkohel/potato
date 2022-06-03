@@ -25,15 +25,15 @@ class SpeechPatternRecognizer():
         try:
             self.speaker.runAndWait()
         except Exception as e:
-            self.print("Cheack your internet connection please, error : " + str(e))
+            print("Cheack your internet connection please, error : " + str(e))
 
     def listen(self, stealthMode = False):
 
         while True:
             try:
                 with sr.Microphone(device_index=1) as mic:
-                    self.recognizer.adjust_for_ambient_noise(mic, duration=0.8)
-                    audio = self.recognizer.listen(mic)
+                    self.recognizer.adjust_for_ambient_noise(mic)
+                    audio = self.recognizer.listen(mic, phrase_time_limit=4)
 
                     text = self.recognizer.recognize_google(audio)
                     text = text.lower()
@@ -44,20 +44,23 @@ class SpeechPatternRecognizer():
                     continue
                 else:
                     self.speak("Sorry didn't get that, try again")
+            except sr.WaitTimeoutError:
+                pass
             except Exception as e:
                 self.speak("Cheack your internet connection please, error : " + str(e))
                 print(e)
 
-    def waitForWakeupCall(self, text):
+    def waitForWakeupCall(self, text, hardware):
 
-        while True:
+        while (not hardware.touched) or hardware.thereIsFire or hardware.thereIsGas:
+            print("waiting for wake UP")
             audio = self.listen(stealthMode=True)
+            print("in wake up i heard : ", audio)
 
             if audio.find(text) >= 0:
                 self.speak("hey there")
                 break
-            else:
-                continue
+        hardware.touched = False
 
     def confirmCommand(self, text = "are you sure you want to confirm your last command"):
         self.speak(text)
