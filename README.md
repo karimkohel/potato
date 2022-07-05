@@ -1,6 +1,6 @@
 # Potato
 
-A beuatiful AI assistant to help students with their uni life that is centralized on a server somewhere
+A beuatiful AI assistant to help students with their uni life that is centralized on a server somewhere while the clinet runs on windows, linux and tomato pods
 
 
 ## Badges
