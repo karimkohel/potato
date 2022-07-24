@@ -22,4 +22,5 @@ Before getting into any of the contrib title you should run the app localy using
 - start the client app from client/potato.py
 
 ## What can you do right now
- - Add Intents in server/tomatoServer/intents.json or server/pcServer/intents.json
+ - Add Intents in server/tomatoServer/intents.json
+ - Add Intents in server/pcServer/intents.json
