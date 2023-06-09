@@ -3,6 +3,9 @@
 A beuatiful AI assistant to help students with their uni life that is centralized on a server somewhere while the clinet runs on windows, linux and tomato pods
 
 
+## NOTICE OF DEPRECATION
+The server was shut down due to cost, the server and both clients code however will still be here if you wish to set it up in your own network
+
 ## Badges
 
 ![GitHub top language](https://img.shields.io/github/languages/top/karimkohel/potato?style=flat-square)
